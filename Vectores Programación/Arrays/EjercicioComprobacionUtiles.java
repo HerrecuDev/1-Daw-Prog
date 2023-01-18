@@ -15,12 +15,12 @@ public class EjercicioComprobacionUtiles {
 
         array =UtilesArrayPablo.limpiar();
 
-        array =UtilesArrayPablo.insertarAlPrincipio(array, 5);
-        
-        
-
-
         array =UtilesArrayPablo.insertarAlPrincipio(array, 20);
+        UtilesArrayPablo.imprimir(array);
+        
+
+        //array =UtilesArrayPablo.insertarAlPrincipio(array,20);
+        
 
         // array =UtilesArrayPablo.insertarAlPrincipio(array, 30);
 
@@ -34,13 +34,21 @@ public class EjercicioComprobacionUtiles {
 
         // array =UtilesArrayPablo.insertarAlPrincipio(array, 98);
 
-        // array =UtilesArrayPablo.insertarAlFinal(array, 5);
+        array =UtilesArrayPablo.insertarAlFinal(array,5);
+        UtilesArrayPablo.imprimir(array);
 
-        // boolean ordenado = UtilesArrayPablo.estaOrdenado(array);
+        array=UtilesArrayPablo.insertarEnPosicion(array, 8, 4);
+        UtilesArrayPablo.imprimir(array);
+
+        array=UtilesArrayPablo.insertarOrdenado(array,3);
+        UtilesArrayPablo.imprimir(array);
+        
+
+        //boolean ordenado = UtilesArrayPablo.estaOrdenado(array);
 
         // System.out.println("Esta ordenado: " + ordenado);
 
-        UtilesArrayPablo.imprimir(array);
+        //UtilesArrayPablo.imprimir(array);
 
         // array =UtilesArrayPablo.eliminarPrimero(array);
 

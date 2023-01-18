@@ -9,8 +9,8 @@ public class UtilesArrayPablo
      */
     static int [] limpiar() 
     {
-        int [] nuevo = new int [0];
-        return nuevo;
+        int [] array = new int [10];
+        return array;
     }
 
     /**
@@ -28,6 +28,7 @@ public class UtilesArrayPablo
     {
         System.out.println(Arrays.toString(array));
     }
+
     static int[] rellenar (int [] array, int numeroElementos, int valor)
     {
         int [] nuevo = new int [numeroElementos];
@@ -39,16 +40,47 @@ public class UtilesArrayPablo
         return nuevo;
     }
 
-    static int[] insertarAlPrincipio (int[] array, int elemento)
+    static int[] insertarAlPrincipio (int[] array,int elemento)
     {
         int [] nuevo = new int[array.length+1];
-        nuevo[0] = elemento;
-    
+        for (int i = 0; i < nuevo.length; i++) 
+        {
+            nuevo[i] = (int)(Math.random()*10);
+            nuevo[0] = elemento; 
+        }
+        
         return nuevo;
     }
 
-/*
- * static int[] insertarOrdenado(int[] array, int elementoNuevo)
+    static int [] insertarAlFinal(int []array,int elemento)
+    {
+        int [] nuevo = new int [array.length+1];
+        for (int i = 0; i <nuevo.length; i++) 
+        {
+            nuevo[i] = (int)(Math.random()*10);
+            nuevo[nuevo.length-1] = elemento;
+        }
+        
+        return nuevo;
+        
+    }
+
+    static int [] insertarEnPosicion (int[] arrayEnPosicion,int elemento,int posicion)
+    {
+       
+        int [] nuevo = new int [arrayEnPosicion.length+1];
+        
+        
+        for (int i = 0; i < nuevo.length; i++) 
+        {
+            nuevo[i] = (int)(Math.random()*10);
+            nuevo[posicion] = elemento;
+        }
+        return nuevo;
+    }
+
+
+ static int[] insertarOrdenado(int[] array, int elementoNuevo)
     {
         int [] nuevo = new int[array.length+1];
 
@@ -59,14 +91,19 @@ public class UtilesArrayPablo
 
         for (int i = 0; i < array.length; i++) 
         {
-            if (elementoNuevo < ) {
+            nuevo[i] = (int)(Math.random()*10);
+            if (nuevo[i] >= elementoNuevo ) 
+            {
                 
+                nuevo[i] = elementoNuevo;
             }
+           
 
         }
+        return nuevo;
     
 
- */
+ 
     
     
 
@@ -74,7 +111,9 @@ public class UtilesArrayPablo
         //inserto la parte izquierda del array (de 0 a posicion -1)
         //inserto el nuevo elemento 
         //inserto la parte derecha del array (de posicion al ultimo)
+
     }
+}
     
     
     
