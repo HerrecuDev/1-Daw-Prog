@@ -1,5 +1,4 @@
-//package ArraysVectores;
-
+import java.net.Socket;
 
 public class EjercicioComprobacionUtiles {
     
@@ -7,16 +6,37 @@ public class EjercicioComprobacionUtiles {
         
         int[] array = null;
 
+        System.out.println("RELLENAR");
         array = UtilesArrayPablo.rellenar(array,10);
         UtilesArrayPablo.imprimir(array);
-
+        
+        System.out.println("RELLENAR CON VALOR");
         array = UtilesArrayPablo.rellenar(array, 10, 2);
         UtilesArrayPablo.imprimir(array);
 
+        System.out.println("LIMPIAR ARRAY");
         array =UtilesArrayPablo.limpiar();
+        UtilesArrayPablo.imprimir(array);
 
+
+        System.out.println("INSERTAR ELEMENTO AL PRINCIPIO");
         array =UtilesArrayPablo.insertarAlPrincipio(array, 20);
         UtilesArrayPablo.imprimir(array);
+
+        System.out.println("INSERTAR ELEMENTO AL FINAL");
+        array =UtilesArrayPablo.insertarAlFinal(array,5);
+        UtilesArrayPablo.imprimir(array);
+
+        System.out.println("INSERTAR ELEMENTO EN LA POSICIN SOLICITADA");
+        array=UtilesArrayPablo.insertarEnPosicion(array, 8, 4);
+        UtilesArrayPablo.imprimir(array);
+
+        System.out.println("INSERTAR ARAY ORDENADO");
+        array=UtilesArrayPablo.insertarOrdenado(array,3);
+        UtilesArrayPablo.imprimir(array);
+
+
+
         
 
         //array =UtilesArrayPablo.insertarAlPrincipio(array,20);
@@ -34,14 +54,10 @@ public class EjercicioComprobacionUtiles {
 
         // array =UtilesArrayPablo.insertarAlPrincipio(array, 98);
 
-        array =UtilesArrayPablo.insertarAlFinal(array,5);
-        UtilesArrayPablo.imprimir(array);
+       
+       
 
-        array=UtilesArrayPablo.insertarEnPosicion(array, 8, 4);
-        UtilesArrayPablo.imprimir(array);
-
-        array=UtilesArrayPablo.insertarOrdenado(array,3);
-        UtilesArrayPablo.imprimir(array);
+        
         
 
         //boolean ordenado = UtilesArrayPablo.estaOrdenado(array);

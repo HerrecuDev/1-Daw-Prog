@@ -14,10 +14,10 @@ public class Ejercicio11Arrays
         System.out.println(Arrays.toString(matriz));
 
         //Buscar los primos:
-        //int[]primosArray = buscarPrimo(matriz);
+        int[]primosArray = buscarPrimo(matriz);
 
         //Buscar los NO primos:
-        //int[]noPimosArray = buscarNoPrimo(matriz);
+        int[]noPimosArray = buscarNoPrimo(matriz);
         //Unir primos + NO PRIMOS:
 
         //Mosrar el Array Resultante:
@@ -33,8 +33,7 @@ public class Ejercicio11Arrays
             array[i] = aleatorio;
         }
     }
-    /*
-     *  static int[] buscarPrimo(int[]array)
+    static int[] buscarPrimo(int[]array)
     {
         int[]nuevo = new int[0];
         for (int i = 0; i < array.length; i++) 
@@ -45,8 +44,6 @@ public class Ejercicio11Arrays
             }
             
         }
-     */
-   
 
 
 

@@ -55,27 +55,27 @@ public class UtilesArrayPablo
     static int [] insertarAlFinal(int []array,int elemento)
     {
         int [] nuevo = new int [array.length+1];
-        for (int i = 0; i <nuevo.length; i++) 
+        for (int i = 0; i <array.length; i++) 
         {
-            nuevo[i] = (int)(Math.random()*10);
-            nuevo[nuevo.length-1] = elemento;
+            nuevo[i] = array[i];
+           
         }
-        
+        nuevo[nuevo.length-1] = elemento;
         return nuevo;
         
     }
 
-    static int [] insertarEnPosicion (int[] arrayEnPosicion,int elemento,int posicion)
+    static int [] insertarEnPosicion (int[] array,int elemento,int posicion)
     {
        
-        int [] nuevo = new int [arrayEnPosicion.length+1];
+        int [] nuevo = new int [array.length+1];
         
         
-        for (int i = 0; i < nuevo.length; i++) 
+        for (int i = 0; i < array.length; i++) 
         {
-            nuevo[i] = (int)(Math.random()*10);
-            nuevo[posicion] = elemento;
+            nuevo[i] = array[i];
         }
+        nuevo[posicion] = elemento;
         return nuevo;
     }
 
@@ -114,7 +114,3 @@ public class UtilesArrayPablo
 
     }
 }
-    
-    
-    
-
