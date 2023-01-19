@@ -76,7 +76,7 @@ public class EjercicioBingoPablo
     }
 
 
-    static int 
+    
 
     static int imprimirCarton(int[][] matriz ) //matriz[9][3]
     {
@@ -93,25 +93,86 @@ public class EjercicioBingoPablo
         // }
 
             
-        int aleatorio = 0;
-        for (int i = 0; i < matriz.length; i++) 
-        {
-            int [] fila = matriz[i];
+        // int aleatorio = 0;
+        // for (int i = 0; i < matriz[0].length; i++) 
+        // {
             
-            for (int j = 0; j < fila.length; j++) 
-            {
+        //     int [] fila = matriz[i];
+           
+            
+        //     for (int j = 0; j < fila.length; j++) 
+        //     {
+        //         aleatorio = (int)((Math.random()*89) + 1);
+        //         matriz [j][i] = aleatorio;
+               
+        //         System.out.print(matriz[j][i] + "\t");
                 
-            }
+        //     }
+        //     System.out.println();
             
-        }
+        // }
+        
         
         //Recorremos las columnas :
+        int aleatorio = 0;
         for (int i = 0; i < matriz[0].length; i++) 
         {
             
             
             for (int j = 0; j < matriz.length; j++) 
             {
+                int [] position = matriz[j];
+                int BlancoAzar = (int)(Math.random()*3);
+               for (int lugar = 0; lugar < position.length; lugar++) 
+               {
+                if (lugar == BlancoAzar) 
+                {
+                    System.out.print("¬");
+                
+                
+                
+                    switch (j) {
+                        case 0:
+                        aleatorio = (int)((Math.random()*9) +1);
+                            break;
+                        case 1 :
+                        aleatorio = (int)((Math.random()*9) +10);
+                            break;
+                        case 2 :
+                        aleatorio = (int)((Math.random()*9) +20);
+                            break;
+                        case 3 :
+                        aleatorio = (int)((Math.random()*9) +30);
+                            break;
+                        case 4 :
+                        aleatorio = (int)((Math.random()*9) +40);
+                            break;
+                        case 5 :
+                        aleatorio = (int)((Math.random()*9) +50);
+                            break;
+                        case 6 :
+                        aleatorio = (int)((Math.random()*9) +60);
+                            break;
+                        case 7 :
+                        aleatorio = (int)((Math.random()*9) +70);
+                            break;
+                        case 8 :
+                        aleatorio = (int)((Math.random()*9) +80);
+                            break;
+                    
+                        default:
+                            break;
+                    
+                    }
+                }
+                
+               
+
+                
+                
+            }
+               
+                matriz[j][i] = aleatorio;
                 
                 System.out.print(matriz[j][i] + "\t");
             }
@@ -120,6 +181,14 @@ public class EjercicioBingoPablo
         }
 
         return 0;
+    }
+
+    static void imprimirBlancos (int [] matriz)
+    {
+        for (int i = 0; i < matriz.length; i++) 
+        {
+            
+        }
     }
     
 }
