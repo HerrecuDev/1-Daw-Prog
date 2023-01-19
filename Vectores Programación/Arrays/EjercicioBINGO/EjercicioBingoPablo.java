@@ -1,5 +1,6 @@
 package EjercicioBINGO;
 
+import java.security.AllPermission;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -50,27 +51,7 @@ public class EjercicioBingoPablo
         boolean salir = true;
 
         do {
-            //Crear/restaurar carton vacio y vaciado de los numeros generados en eljuego anterior
-            
-            
-            //Coloco los 12 espacios en blanco, distribuidos en 4 por cada fila al azar en las columnas
-            //ponerBlancos(carton);
-
-            //introduzco los numeros de cada columna
-            for (int i = 0; i < col0.length; i++) 
-            int aleatorioCol0 = (int)((Math.random()*9) +1);
-            
-            {
-    
-               
-            }
-            System.out.println(col0[0]);
-            //rellenarNumerosCarton(carton);
-
-            //pinto el cartón ;
-            //pintarCarton(carton, numerosGenerados);
-
-            //pregunto si quiero sacar otra bola o terminar este juego
+          
 
 
             
@@ -81,6 +62,7 @@ public class EjercicioBingoPablo
             {
 
                 //Saco numeros aleatorios
+                
 
 
                 //Pinto el carton con numeros sacados :
@@ -94,6 +76,7 @@ public class EjercicioBingoPablo
     }
 
 
+    static int 
 
     static int imprimirCarton(int[][] matriz ) //matriz[9][3]
     {
@@ -109,12 +92,27 @@ public class EjercicioBingoPablo
             
         // }
 
-            //Recorremos las columnas :
+            
+        int aleatorio = 0;
+        for (int i = 0; i < matriz.length; i++) 
+        {
+            int [] fila = matriz[i];
+            
+            for (int j = 0; j < fila.length; j++) 
+            {
+                
+            }
+            
+        }
+        
+        //Recorremos las columnas :
         for (int i = 0; i < matriz[0].length; i++) 
         {
             
+            
             for (int j = 0; j < matriz.length; j++) 
             {
+                
                 System.out.print(matriz[j][i] + "\t");
             }
             System.out.println();
