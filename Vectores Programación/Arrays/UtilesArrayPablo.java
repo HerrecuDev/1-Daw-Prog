@@ -67,6 +67,11 @@ public class UtilesArrayPablo
 
     static int [] insertarEnPosicion (int[] array,int elemento,int posicion)
     {
+          //Insertar el nuevo valor en esa posicion en el nuevo array
+        //inserto la parte izquierda del array (de 0 a posicion -1)
+        //inserto el nuevo elemento 
+        //inserto la parte derecha del array (de posicion al ultimo)
+
        
         int [] nuevo = new int [array.length+1];
         
@@ -82,35 +87,11 @@ public class UtilesArrayPablo
 
  static int[] insertarOrdenado(int[] array, int elementoNuevo)
     {
-        int [] nuevo = new int[array.length+1];
-
-        //Encontrar en la posicion de inseccion
-        int posicionInsercion = 0;
-
-        boolean noencontradoPosicion = true;
-
-        for (int i = 0; i < array.length; i++) 
-        {
-            nuevo[i] = (int)(Math.random()*10);
-            if (nuevo[i] >= elementoNuevo ) 
-            {
-                
-                nuevo[i] = elementoNuevo;
-            }
-           
-
-        }
-        return nuevo;
+        Arrays.sort(array);
     
 
- 
     
-    
-
-        //Insertar el nuevo valor en esa posicion en el nuevo array
-        //inserto la parte izquierda del array (de 0 a posicion -1)
-        //inserto el nuevo elemento 
-        //inserto la parte derecha del array (de posicion al ultimo)
-
+        
+        return array;
     }
 }

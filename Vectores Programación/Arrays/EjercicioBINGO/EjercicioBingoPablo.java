@@ -43,14 +43,36 @@ public class EjercicioBingoPablo
         int [] numerosGenerados = new int [0];
 
 
-        System.out.println(Arrays.deepToString(carton));
-        imprimirCarton(carton);
+        //System.out.println(Arrays.deepToString(carton));
+        
+        
+       
 
 
         //Variable para controlar si seguimos jugando otro carton o salimos del programa.
         boolean salir = true;
 
         do {
+
+            
+
+            //Coloco los 12 espacios en blanco, distribuidos en 4 por cada fila al azar en las columnas
+            //ponerBlancos(carton);
+
+            System.out.println("------------------------------------------------------------------------");
+
+            //introduzco los numeros de cada columna
+            generarCarton(carton);
+            System.out.println("------------------------------------------------------------------------");
+
+            //Generamos el carton vacio
+            imprimirCarton(carton);
+            System.out.println("------------------------------------------------------------------------");
+
+            //Generamos el carton completo con los valores ordenados :
+            
+            generarCarton(carton);
+
           
 
 
@@ -76,119 +98,124 @@ public class EjercicioBingoPablo
     }
 
 
-    
-
-    static int imprimirCarton(int[][] matriz ) //matriz[9][3]
+    static void imprimirCarton (int [][]matriz)
     {
-        
-        //Recorremos las filas
-        // for (int i = 0; i < matriz.length; i++) 
-        // {
-        //     for (int j = 0; j < matriz[0].length; j++) 
-        //     {
-        //         System.out.print(matriz[i][j] + "\t");
-        //     }
-        //     System.out.println();
-            
-        // }
-
-            
-        // int aleatorio = 0;
-        // for (int i = 0; i < matriz[0].length; i++) 
-        // {
-            
-        //     int [] fila = matriz[i];
-           
-            
-        //     for (int j = 0; j < fila.length; j++) 
-        //     {
-        //         aleatorio = (int)((Math.random()*89) + 1);
-        //         matriz [j][i] = aleatorio;
-               
-        //         System.out.print(matriz[j][i] + "\t");
-                
-        //     }
-        //     System.out.println();
-            
-        // }
-        
-        
-        //Recorremos las columnas :
-        int aleatorio = 0;
         for (int i = 0; i < matriz[0].length; i++) 
         {
-            
-            
             for (int j = 0; j < matriz.length; j++) 
             {
-                int [] position = matriz[j];
-                int BlancoAzar = (int)(Math.random()*3);
-               for (int lugar = 0; lugar < position.length; lugar++) 
-               {
-                if (lugar == BlancoAzar) 
-                {
-                    System.out.print("¬");
-                
-                
-                
-                    switch (j) {
-                        case 0:
-                        aleatorio = (int)((Math.random()*9) +1);
-                            break;
-                        case 1 :
-                        aleatorio = (int)((Math.random()*9) +10);
-                            break;
-                        case 2 :
-                        aleatorio = (int)((Math.random()*9) +20);
-                            break;
-                        case 3 :
-                        aleatorio = (int)((Math.random()*9) +30);
-                            break;
-                        case 4 :
-                        aleatorio = (int)((Math.random()*9) +40);
-                            break;
-                        case 5 :
-                        aleatorio = (int)((Math.random()*9) +50);
-                            break;
-                        case 6 :
-                        aleatorio = (int)((Math.random()*9) +60);
-                            break;
-                        case 7 :
-                        aleatorio = (int)((Math.random()*9) +70);
-                            break;
-                        case 8 :
-                        aleatorio = (int)((Math.random()*9) +80);
-                            break;
-                    
-                        default:
-                            break;
-                    
-                    }
-                }
-                
-               
-
-                
-                
-            }
-               
-                matriz[j][i] = aleatorio;
-                
                 System.out.print(matriz[j][i] + "\t");
             }
             System.out.println();
             
         }
-
-        return 0;
+       
     }
 
-    static void imprimirBlancos (int [] matriz)
-    {
-        for (int i = 0; i < matriz.length; i++) 
-        {
-            
-        }
-    }
+
     
+
+    static void generarCarton(int[][] matriz ) //matriz[9][3]
+    {
+        for (int columna = 0; columna < matriz.length; columna++) 
+        {
+            ;
+            
+            for (int fila = 0; fila < matriz[columna].length; fila++) 
+            {
+                
+                generarAleaorio(matriz[columna], columna, fila);
+                
+            }
+
+        }
+        
+    }
+
+    /**
+     * Genera los valores aleatorios de cada columna y los intoduce en el carton
+     * @param matriz
+     */
+    static void generarAleaorio (int [] array , int columna, int fila)
+    {
+       
+                int posicion = 0;
+        
+                int aleatorio = 0;
+
+                boolean ok = false;
+
+                while (!ok)
+                {
+
+                    switch (columna) {
+                        case 0:
+                            aleatorio = (int)((Math.random()*9) +1);
+                            break;
+                        case 1 :
+                            aleatorio = (int)((Math.random()*9) +10);
+                            break;
+                        case 2 :
+                            aleatorio = (int)((Math.random()*9) +20);
+                            break;
+                        case 3 :
+                            aleatorio = (int)((Math.random()*9) +30);
+                            break;
+                        case 4 :
+                            aleatorio = (int)((Math.random()*9) +40);
+                            break;
+                        case 5 :
+                            aleatorio = (int)((Math.random()*9) +50);
+                            break;
+                        case 6 :
+                            aleatorio = (int)((Math.random()*9) +60);
+                            break;
+                        case 7 :
+                            aleatorio = (int)((Math.random()*9) +70);
+                            break;
+                        case 8 :
+                            aleatorio = (int)((Math.random()*9) +80);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    ok = esValorCorrecto(array, aleatorio);
+                    
+                }
+            
+                array[fila]  = aleatorio;
+               
+               
+            
+            
+    
+    
+    }
+
+    static boolean esValorCorrecto(int [] array, int aleatorio)
+    {
+        boolean resultado = true;
+        
+        for (int i = 0; i < array.length; i++) 
+        {
+            if (array[i] == aleatorio)
+            {
+                resultado = false;
+            }
+            
+            
+
+        }
+
+
+
+
+        return resultado;
+    }
+
+    static void ordenarCarton (int[][] array)
+    {
+        Arrays.sort(array);
+    }
 }
