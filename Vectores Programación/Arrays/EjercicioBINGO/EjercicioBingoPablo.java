@@ -64,6 +64,7 @@ public class EjercicioBingoPablo
             //introduzco los numeros de cada columna
             generarCarton(carton);
             System.out.println("------------------------------------------------------------------------");
+            System.out.println(Arrays.deepToString(carton));
 
             //Generamos el carton vacio
             imprimirCarton(carton);
@@ -71,7 +72,9 @@ public class EjercicioBingoPablo
 
             //Generamos el carton completo con los valores ordenados :
             
-            generarCarton(carton);
+            // generarCarton(carton);
+            ponerBlancos(carton);
+            
 
           
 
@@ -119,16 +122,21 @@ public class EjercicioBingoPablo
     {
         for (int columna = 0; columna < matriz.length; columna++) 
         {
-            ;
+            
             
             for (int fila = 0; fila < matriz[columna].length; fila++) 
             {
                 
                 generarAleaorio(matriz[columna], columna, fila);
+               
+                
                 
             }
-
+        ordenarCarton(matriz, columna);
+        ponerBlancos(matriz);
+       
         }
+        
         
     }
 
@@ -144,6 +152,7 @@ public class EjercicioBingoPablo
                 int aleatorio = 0;
 
                 boolean ok = false;
+                
 
                 while (!ok)
                 {
@@ -182,9 +191,11 @@ public class EjercicioBingoPablo
 
                     ok = esValorCorrecto(array, aleatorio);
                     
+                    
                 }
             
                 array[fila]  = aleatorio;
+                
                
                
             
@@ -214,8 +225,39 @@ public class EjercicioBingoPablo
         return resultado;
     }
 
-    static void ordenarCarton (int[][] array)
+    static void ordenarCarton (int[][] array , int fila)
     {
-        Arrays.sort(array);
+        Arrays.sort(array[fila]);
+    }
+
+    static void ponerBlancos (int [][] matriz)
+    {
+        int blancosInsertados = 0;
+        
+        while (blancosInsertados < 5) 
+        {
+            for (int fila = 0; fila < matriz.length; fila++) 
+            {
+                int aleatorioBlancos = (int) (Math.random()*9);
+                //Recorre los 9 digitos de cada fila:
+                matriz[fila][aleatorioBlancos] = -1;
+            
+                
+                for (int columna = 0; columna < matriz[0].length; columna++) 
+                {
+                    //Recorre los 3 digitos de cada columna.
+                   
+                
+                        
+                }
+        
+            
+            }
+            
+        }
+
+        
     }
 }
+   
+
