@@ -1,6 +1,6 @@
 import java.net.Socket;
 
-public class EjercicioComprobacionUtiles {
+public class bibliotecaUtilesArrayPablo {
     
     public static void main(String[] args) {
         

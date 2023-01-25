@@ -236,17 +236,19 @@ public class EjercicioBingoPablo
         
         while (blancosInsertados < 5) 
         {
-            for (int fila = 0; fila < matriz.length; fila++) 
+            for (int columna = 0; columna < matriz.length; columna++) 
             {
-                int aleatorioBlancos = (int) (Math.random()*9);
+                
+                int aleatorioBlancos = (int) (Math.random()*3);
                 //Recorre los 9 digitos de cada fila:
-                matriz[fila][aleatorioBlancos] = -1;
+                
             
                 
-                for (int columna = 0; columna < matriz[0].length; columna++) 
+                for (int fila = 0; fila < matriz[0].length; fila++) 
                 {
                     //Recorre los 3 digitos de cada columna.
-                   
+                    matriz[columna][aleatorioBlancos] = -1;
+                    blancosInsertados++;
                 
                         
                 }
