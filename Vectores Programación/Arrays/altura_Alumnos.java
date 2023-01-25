@@ -67,7 +67,7 @@ public class altura_Alumnos
                     break;
             }
             
-        } while (salir);
+        } while (salir = !false);
         
     
      
@@ -118,9 +118,9 @@ public class altura_Alumnos
 
     static double [] addAltura(double [] array , double nuevaAltura)
     {
-        //Creamos una nueva altura :
-        System.out.println("Introducir nueva altura");
-        double nuevoAlt = sc.nextDouble();
+        // //Creamos una nueva altura :
+        // System.out.println("Introducir nueva altura");
+        // double nuevoAlt = sc.nextDouble();
 
         //Creamos un nuevo Array con 1 posicion mas:
         double[] nuevoArray = new double[array.length +1];
@@ -132,7 +132,8 @@ public class altura_Alumnos
             nuevoArray[i] = array[i];
         }
         //Añade en la ultima posicion del nuevo array el nuevo valor :
-        nuevoArray[nuevoArray.length -1] = nuevoAlt;
+        nuevoArray[nuevoArray.length -1] = nuevaAltura
+        ;
 
         
         return nuevoArray;
