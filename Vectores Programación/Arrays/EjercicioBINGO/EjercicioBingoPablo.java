@@ -234,29 +234,28 @@ public class EjercicioBingoPablo
     {
         int blancosInsertados = 0;
         
-        while (blancosInsertados < 5) 
-        {
-            for (int columna = 0; columna < matriz.length; columna++) 
+        
+            for (int columna = 0; columna < matriz[0].length; columna++) //por cada fila busco 4 blancos
             {
+                while (blancosInsertados < 5) 
+                {
                 
-                int aleatorioBlancos = (int) (Math.random()*3);
-                //Recorre los 9 digitos de cada fila:
-                
+                    int aleatorioBlancos = (int) (Math.random()*9);
+                    //Recorre los 9 digitos de cada fila:
+                    
+                    //si esta ya blanco esa posicion busco otra nueva
+                    //si no guardo -1 en esa posiicion
+                    if (matriz[aleatorioBlancos][columna] != -1) //&& numeroBlancosColumna(matriz[aleatorioBlancos] < 2))
+                    {
+                        matriz[aleatorioBlancos][columna] = -1;
+                        blancosInsertados++;
+                    }
+                    
+                }
             
                 
-                for (int fila = 0; fila < matriz[0].length; fila++) 
-                {
-                    //Recorre los 3 digitos de cada columna.
-                    matriz[columna][aleatorioBlancos] = -1;
-                    blancosInsertados++;
-                
-                        
-                }
-        
             
             }
-            
-        }
 
         
     }

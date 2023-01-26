@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -43,19 +44,19 @@ public class ejercicio_alturaAlumnoPractico
            switch (opcion) {
             case 1:
                 alumno = addAlumno(alumno);
-                altura = addAltura(altura, nuevaAltura);
+                altura = addAltura(altura,1.5);
                 
                     break;
             case 2:
-               altura = modificarAltura(altura,alumno);
+               altura = modificarAltura(alumno,altura);
                 
                 break;
             case 3:
-                mostrarTodo(alumno,altura);
+                mostrarTodo(alumno, altura);
                 
                 break;
             case 4:
-                altura = imcrementarAltura(altura);
+                altura = incrementarAltura(altura);
         
                 break;
             case 0:
@@ -88,9 +89,11 @@ public class ejercicio_alturaAlumnoPractico
         System.out.println(" 3 - Mostrar todo el Array");
         System.out.println(" 4 - Incrementar altura");
 
-        System.out.println("¿Que opcion quiere Realizar ?");
+        
 
         System.out.print();
+       
+        System.out.println("¿Que opcion quiere Realizar ?");
 
         int opcion = sc.nextInt();
         sc.nextLine();
@@ -100,7 +103,7 @@ public class ejercicio_alturaAlumnoPractico
 
     }
 
-    static string [] addAlumno (string []arrayNombre)
+    static String [] addAlumno (String []arrayNombre)
     {
         //Preguntamois nombre a introducir :
         System.out.println("Introducir nombre");
@@ -121,21 +124,21 @@ public class ejercicio_alturaAlumnoPractico
 
     }
 
-    static double [] addAltura(double[]array, double nuevaAltura)
+    static double [] addAltura(double[]array, double nuevaALtura)
     {
          //Creamos un nuevo Array con una posicion mas :
          double []nuevoArray = new double [array.length+1];
          //Copiamos el nuevo array en el anterior
          for (int i = 0; i < nuevoArray.length; i++) 
          {
-             arrayAltura[i] = array[i];
+             array[i] = array[i];
          }
          //Metemos en la ultima posicion el nuevo Array :
          
-         arrayAltura[nuevoArray.length-1] = nuevaAltura;
+         array[nuevoArray.length-1] = nuevoArray;
     }
 
-    static double [] modificarALtura (String [] arrayNombre, double [] arrayAltura)
+    static double [] modificarAltura (String [] arrayNombre, double [] arrayAltura)
     {
         //Preguntamos el nombre del Alumno
         System.out.println("Introducir nombre del alumno");
@@ -169,13 +172,13 @@ public class ejercicio_alturaAlumnoPractico
 
     }
 
-    static void  mostrarTodo(string [] arrayNombre, double [] arrayAltura)
+    static void  mostrarTodo(String[] arrayNombre, double[] arrayAltura)
     {
         System.out.println(Arrays.deepToString(arrayNombre, arrayAltura));
 
     }
 
-    static double [] imcrementarAltura(double [] arrayAltura)
+    static double [] incrementarAltura(double [] arrayAltura)
     {
         System.out.println("¿Cuanto quiere incrementar la altura?");
         double aumentarAltura = sc.nextDouble();

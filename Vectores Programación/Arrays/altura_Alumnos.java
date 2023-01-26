@@ -50,13 +50,13 @@ public class altura_Alumnos
                     
                     break;
                 case 2:
-                    //alturas = modificarALtura(alumnos, alturas);
+                    alturas = modificarAltura(alumnos, alturas);
                     break;
                 case 3 :
-                    //mostrarTodo(alumnos, alturas);
+                    mostrarTodo(alumnos, alturas);
                     break;
                 case 4 :
-                    //alturas = incrementarAltura(alturas);
+                    alturas = incrementarAltura(alturas);
                     break;
                 case 0 :
                     salir = true;
@@ -82,10 +82,10 @@ public class altura_Alumnos
         System.out.println("2 - Modificar Altura alumno");
         System.out.println("3 - Mostrar Todo");
         System.out.println("4 - Insertar ALumno");
-
+        System.out.print("¿Que opcion quiere realiza?");
         System.out.println();
 
-        System.out.print("opcion");
+        //System.out.print("opcion");
         int opcion = sc.nextInt();
         sc.nextLine();
 
@@ -147,40 +147,58 @@ public class altura_Alumnos
 
     
 
-        // static double [] modificarAltura (String [] arrayNombre , double[] arrayAlturas)
-        // {
+    static double [] modificarAltura (String [] arrayNombre, double [] arrayAltura)
+    {
+        //Preguntamos el nombre del Alumno
+        System.out.println("Introducir nombre del alumno");
+        String alumno = sc.nextLine();
+        //Introducimos la nueva altura:
+        System.out.println("Introducir nueva altura");
+        double nuevaALtura = sc.nextDouble();
 
-        //     //Buscamos al ALumno y decimos la altura que queremos modificar:
+        //Buscamos nombre en el Array nombre :
+        int posicion = -1;
+        for (int i = 0; i < arrayAltura.length; i++) 
+        {
+            if (arrayNombre[i].equalsIgnoreCase(alumno)) 
+            {
+                posicion = i;
+            }
 
-        //     System.out.println("Dime el nombre del Alumno que voy a modificar");
-        //     String nombreBuscado = sc.nextLine();
-
-        //     System.out.println("Dime la nueva altura");
-        //     double nuevaAltura = sc.nextDouble();
-
-        //     //Buscar un nombe en el arrayNombre :
-        //     int posicion = -1;
-        //     for (int i = 0; i < arrayNombre.length; i++) 
-        //     {
-        //         if (arrayNombre[i].equalsIgnoreCase(nombreBuscado)) 
-        //         {
-        //             posicion = i;
-                    
-        //         }
+            if (posicion >=0) 
+            {
+                System.out.println("Dime la nueva altura");
+                double alturanew = sc.nextDouble();
+                arrayAltura[i] = nuevaALtura;
                 
-        //     }
-
-        //     if (posicion >= 0) 
-        //     {
-        //         System.out.println("dime la nueva altura");
-        //         nuevaAltura = sc.nextDouble();
-
-
                 
-        //     }
+            }
+            return nuevaALtura;
 
-        // }
+        }
+       
 
+
+    }
+
+    static void  mostrarTodo(String[] arrayNombre, double[] arrayAltura)
+    {
+        System.out.println(Arrays.deepToString(arrayNombre, arrayAltura));
+
+    }
+
+    static double [] incrementarAltura(double [] arrayAltura)
+    {
+        System.out.println("¿Cuanto quiere incrementar la altura?");
+        double aumentarAltura = sc.nextDouble();
+
+        arrayAltura[arrayAltura.length -1] = aumentarAltura;
+
+        return aumentarAltura;
+
+
+    }
+    
     
 }
     
