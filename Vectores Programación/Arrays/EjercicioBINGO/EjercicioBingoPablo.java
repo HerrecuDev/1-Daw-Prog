@@ -72,7 +72,8 @@ public class EjercicioBingoPablo
 
             //Generamos el carton completo con los valores ordenados :
             
-            ponerBlancos(carton);
+          
+           ponerBlancos(carton);
 
             
             
@@ -123,19 +124,20 @@ public class EjercicioBingoPablo
     {
         for (int columna = 0; columna < matriz.length; columna++) 
         {
-            ordenarCarton(matriz, columna);
-            ponerBlancos(matriz);
+           
             
+        
             
             for (int fila = 0; fila < matriz[columna].length; fila++) 
             {
                 
                 generarAleaorio(matriz[columna], columna, fila);
                 
-               
-                
-            }
             
+            }
+            ordenarCarton(matriz, columna);
+            ponerBlancos(matriz);
+           
         
         }
         
@@ -232,56 +234,37 @@ public class EjercicioBingoPablo
 
     static void ponerBlancos (int [][] matriz)
     {
-    for (int i = 0; i < matriz.length; i++) 
-    {
-        for (int columna = 0; columna < matriz[0].length; columna++) 
-        {   
-             int blancosInsertados = 0;
-             while (blancosInsertados < 5) 
-            {
-                int aleatorioBlancos = (int)(Math.random()*9);
-                    //Si la posicion dada aleatoriamente tiene ya -1 Buscamos otro posicion :
-                if (matriz[aleatorioBlancos][columna] != -1) 
+            for (int columna = 0; columna < matriz[0].length; columna++) //por cada fila busco 4 blancos
+            {   
+                for (int i = 0; i < matriz.length; i++) 
+                {   
+                    
+                
+                int blancosInsertados = 0;
+                while (blancosInsertados < 5) 
                 {
-                    matriz[aleatorioBlancos][columna] = -1;
-                    blancosInsertados++;
+                
+                int aleatorioBlancos = (int) (Math.random()*9);
+                
+            
+                    //si esta ya blanco esa posicion busco otra nueva
+                    //si no guardo -1 en esa posiicion
+                
+                    if (matriz[aleatorioBlancos][columna] != -1) //&& numeroBlancosColumna(matriz[aleatorioBlancos] < 2))
+                    {
+                    
+                        matriz[aleatorioBlancos][columna] = -1;
+                        blancosInsertados++;
+                    }
+                    
                 }
-            
-            
-            
-            }
-        }
-    
-            // for (int columna = 0; columna < matriz[0].length; columna++) //por cada fila busco 4 blancos
-            // {
-            //     while (blancosInsertados < 5) 
-            //     {
-                
-            //     int aleatorioBlancos = (int) (Math.random()*9);
-            //     //Recorre los 9 digitos de cada fila:
-                
-            //         //si esta ya blanco esa posicion busco otra nueva
-            //         //si no guardo -1 en esa posiicion
-                
-            //         if (matriz[aleatorioBlancos][columna] != -1) //&& numeroBlancosColumna(matriz[aleatorioBlancos] < 2))
-            //         {
-                    
-            //             matriz[aleatorioBlancos][columna] = -1;
-            //             blancosInsertados++;
-            //         }
-                    
-            //     }
                     
                    
                     
-            // }
-            
-                
-            
-    }
-
+                }
         
-    }   
+            }  
+    } 
 }
 
    
