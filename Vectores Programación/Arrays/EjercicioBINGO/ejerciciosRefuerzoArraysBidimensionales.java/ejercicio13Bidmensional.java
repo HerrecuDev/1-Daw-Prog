@@ -21,6 +21,7 @@ public class ejercicio13Bidmensional
     {
         for (int i = 0; i < arrayBid.length; i++) 
         {
+            
            System.out.print(pais[i] + "\t");
            
 
@@ -35,10 +36,13 @@ public class ejercicio13Bidmensional
             }
             //Hacemos la media :
             int media = mediasAltura(arrayBid[i]);
-            System.out.print("media" + arrayBid[i]);
+            System.out.println("Media" + "\t"+ media );
+            
+
             //Calculamos el maximo y minimo:
-            int[] arrayMaxMin = calcularMAximoMinimo(arrayBid[i]);
-            System.out.println("Maxima " + );
+            int [] maximo = calcularMAximoMinimo(arrayBid[i]);
+            // int minimo = calcularMAximoMinimo(arrayBid[i]);
+            System.out.println("Maximo" + "\t" + maximo);
 
             System.out.println("|");
         }

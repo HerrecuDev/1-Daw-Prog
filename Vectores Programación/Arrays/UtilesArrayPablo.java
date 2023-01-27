@@ -85,7 +85,7 @@ public class UtilesArrayPablo
     }
 
 
- static int[] insertarOrdenado(int[] array, int elementoNuevo)
+    static int[] insertarOrdenado(int[] array, int elementoNuevo)
     {
         Arrays.sort(array);
     
@@ -93,5 +93,16 @@ public class UtilesArrayPablo
     
         
         return array;
+    }
+
+    static int eliminarUltimo(int[] array, int numeroElementos)
+    {
+        int[] nuevo = new int [numeroElementos];
+        for (int i = 0; i < array.length; i++) 
+        {
+            nuevo[i] = array[array.length-1];
+        }
+        return nuevo;
+
     }
 }

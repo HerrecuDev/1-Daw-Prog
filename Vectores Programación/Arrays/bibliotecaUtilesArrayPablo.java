@@ -31,8 +31,12 @@ public class bibliotecaUtilesArrayPablo {
         array=UtilesArrayPablo.insertarEnPosicion(array, 8, 4);
         UtilesArrayPablo.imprimir(array);
 
-        System.out.println("INSERTAR ARAY ORDENADO");
+        System.out.println("INSERTAR ARRAY ORDENADO");
         array=UtilesArrayPablo.insertarOrdenado(array,3);
+        UtilesArrayPablo.imprimir(array);
+
+        System.out.println("Eliminar ultimo elemento");
+        array=UtilesArrayPablo.eliminarUltimo(array, numeroElementos);
         UtilesArrayPablo.imprimir(array);
 
 

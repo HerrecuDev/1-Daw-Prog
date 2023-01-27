@@ -33,6 +33,7 @@ public class Ejercicio6Array
         {
             int aleatorio = (int)(Math.random() * 101);
             array[i] = aleatorio;
+            System.out.println(aleatorio);
         }
     }
 

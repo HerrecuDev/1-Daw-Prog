@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch bibliotecaUtilesArrayPablo",
+            "request": "launch",
+            "mainClass": "bibliotecaUtilesArrayPablo",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Launch EjercicioBingoPablo",
+            "request": "launch",
+            "mainClass": "EjercicioBINGO.EjercicioBingoPablo",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio6Array",
+            "request": "launch",
+            "mainClass": "Ejercicio6Array",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio6PracticoArrays",
+            "request": "launch",
+            "mainClass": "Ejercicio6PracticoArrays",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio4Arrays",
+            "request": "launch",
+            "mainClass": "Ejercicio4Arrays",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio4practicoArray1D",
+            "request": "launch",
+            "mainClass": "Ejercicio4practicoArray1D",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}
