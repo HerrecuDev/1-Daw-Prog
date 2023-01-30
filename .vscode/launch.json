@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch DentrodeClase",
             "request": "launch",
+            "mainClass": "ClasesT6.Clases.DentrodeClase",
+            "projectName": "1-Daw-Prog_b2c5bd45"
+        },
+        {
+            "type": "java",
+            "name": "Launch DentrodeClase",
+            "request": "launch",
             "mainClass": "DentrodeClase",
             "projectName": ""
         },
