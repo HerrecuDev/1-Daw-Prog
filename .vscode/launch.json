@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch DentrodeClase",
+            "request": "launch",
+            "mainClass": "DentrodeClase",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Launch bibliotecaUtilesArrayPablo",
             "request": "launch",
             "mainClass": "bibliotecaUtilesArrayPablo",
