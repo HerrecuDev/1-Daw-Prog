@@ -8,6 +8,9 @@ class Persona
     String apellidos;
     int edad;
     int altura;
+    CuentaCorriente cc;
+
+    static boolean vivo = true;
 
     //Creamos contructores : Se definen entre los atributos y los métodos :
     public Persona()
@@ -29,10 +32,10 @@ class Persona
 
     public Persona(String nombre, String apellidos , int edad , int estatura)
     {
-        this.nombre = nombre;
+        this(nombre,edad);//Llama al contructor anterior de edad y nombre. Y siempre se tiene que declarar al principio debido a que de esta forma el this nos crea el Objeto.
         this.apellidos = apellidos;
-        this.edad = edad;
         this.altura = estatura;
+        this.dni = dni;
 
     }
 
@@ -48,6 +51,18 @@ class Persona
     {
         edad = edad +1;
         //Edad++;
+    }
+    static void matarAtodos()
+    {
+        vivo = false;
+       
+    }
+
+    public void crearCuentaCorriente ()
+    {
+        CuentaCorriente cc = new CuentaCorriente("00000", this.nombre);
+        this.cc = cc;
+        //cc.dni = "7777";
     }
 
 

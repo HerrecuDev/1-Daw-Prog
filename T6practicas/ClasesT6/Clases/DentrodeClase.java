@@ -68,7 +68,37 @@ public class DentrodeClase
         //Coge los valores Creados en el contructor PErsonas(String , int)
         Persona p4 = new Persona("Andres", 20);
 
+        Persona p5 = new Persona();
+        Persona p6 = new Persona("PEPE", null,20,180);
 
+
+        //Cambiamos de esta forma el valor de una variable ESTATICA:
+        System.out.println(p5.vivo);
+        System.out.println(Persona.vivo);
+        Persona.vivo = false;
+        System.out.println(p5.vivo);
+        System.out.println(Persona.vivo);
+
+
+        //Para declarar un conductor de una PErsona aun sin definir.
+        if (p5.dni != null) 
+        {
+            System.out.println("nombre de p4" + p5.dni);
+
+        }
+        else
+        {
+            System.out.println("Aun no tiene DNI");
+        }
+        
+        persona1.crearCuentaCorriente();
+        CuentaCorriente cc_alfonso = persona1.cc;
+        System.out.println(cc_alfonso);
+        cc_alfonso.saldo = 20;
+        
+        double saldoActual = cc_alfonso.saldo;
+        cc_alfonso.ingresarDinero(20);
+        System.out.println(cc_alfonso);
         
         
     }

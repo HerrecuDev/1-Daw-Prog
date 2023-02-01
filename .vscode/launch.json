@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Banco",
+            "request": "launch",
+            "mainClass": "ClasesT6.UsoClases.Banco",
+            "projectName": "1-Daw-Prog_b2c5bd45"
+        },
+        {
+            "type": "java",
             "name": "Launch EjercicioBingoPablo",
             "request": "launch",
             "mainClass": "EjercicioBingoPablo",
