@@ -1,4 +1,4 @@
-package ClasesT6.Clases;
+package T6practicas.Clases;
 
 public class DentrodeClase 
 {

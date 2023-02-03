@@ -8,6 +8,27 @@
             "type": "java",
             "name": "Launch Banco",
             "request": "launch",
+            "mainClass": "T6practicas.UsoClases.Banco",
+            "projectName": "1-Daw-Prog_b2c5bd45"
+        },
+        {
+            "type": "java",
+            "name": "Launch testEntornos",
+            "request": "launch",
+            "mainClass": "entornos.testEntornos",
+            "projectName": "1-Daw-Prog_b2c5bd45"
+        },
+        {
+            "type": "java",
+            "name": "Launch testEntornos",
+            "request": "launch",
+            "mainClass": "testEntornos",
+            "projectName": "1-Daw-Prog_b2c5bd45"
+        },
+        {
+            "type": "java",
+            "name": "Launch Banco",
+            "request": "launch",
             "mainClass": "ClasesT6.UsoClases.Banco",
             "projectName": "1-Daw-Prog_b2c5bd45"
         },

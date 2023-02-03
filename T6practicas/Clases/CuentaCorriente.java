@@ -1,4 +1,4 @@
-package ClasesT6.Clases;
+package T6practicas.Clases;
 
 public class CuentaCorriente 
 {
@@ -6,6 +6,7 @@ public class CuentaCorriente
     String dni;
     String nombreTitular;
     double saldo;
+    private Gestor gestor;
 
     //Constructores :
     public CuentaCorriente(String dni , String nombreTitular)
@@ -60,5 +61,20 @@ public class CuentaCorriente
     {
         return mostrarInformacion();
     }
+
+
+
+    public Gestor getGestor() {
+        return gestor;
+    }
+    
+    public void setGestor(Gestor gestor) {
+        this.gestor = gestor;
+    }
+
+
+
+
+
     
 }

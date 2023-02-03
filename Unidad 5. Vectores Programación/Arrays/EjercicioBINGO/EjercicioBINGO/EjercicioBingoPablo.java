@@ -1,5 +1,3 @@
-package EjercicioBINGO;
-
 import java.security.AllPermission;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -246,7 +244,7 @@ public class EjercicioBingoPablo
                     //si esta ya blanco esa posicion busco otra nueva
                     //si no guardo -1 en esa posiicion
                 
-                    if (matriz[aleatorioBlancos][columna] != -1) && numeroBlancosColumna(matriz[aleatorioBlancos] < 2))
+                    if (matriz[aleatorioBlancos][columna] != -1) //&& numeroBlancosColumna(matriz[aleatorioBlancos] < 2);
                     {
                         matriz[aleatorioBlancos][columna] = -1;
                         blancosInsertados++;
@@ -262,13 +260,19 @@ public class EjercicioBingoPablo
 
 
 
-    static int numeroBlancosColumna(int[][] matriz, int posicion)
-    {
-        int blancosPintados = 0;
-        if (blancosPintados <2)
-        {
+    // static int numeroBlancosColumna(int[][] matriz, int posicion)
+    // {
+    //     for (int i = 0; i < matriz.length; i++) 
+    //     {
+        
+    //         int blancosPintados = 0;
+    //         if ()
+    //         {
+    //             blancosPintados++;
 
-        }
+    //         }
+    //     }
+        
         
 
     }

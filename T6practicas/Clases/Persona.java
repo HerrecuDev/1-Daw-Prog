@@ -1,14 +1,16 @@
-package ClasesT6.Clases;
+package T6practicas.Clases;
 
-class Persona 
+public class Persona 
 {
     //Añadimos Atributos :
-    String dni;
-    String nombre;
-    String apellidos;
-    int edad;
-    int altura;
-    CuentaCorriente cc;
+    private String dni;
+    private String nombre;
+   
+
+    private String apellidos;
+    private int edad;
+    public int estatura;
+    private CuentaCorriente cc;
 
     static boolean vivo = true;
 
@@ -34,7 +36,7 @@ class Persona
     {
         this(nombre,edad);//Llama al contructor anterior de edad y nombre. Y siempre se tiene que declarar al principio debido a que de esta forma el this nos crea el Objeto.
         this.apellidos = apellidos;
-        this.altura = estatura;
+        this.estatura = estatura;
         this.dni = dni;
 
     }
@@ -42,7 +44,62 @@ class Persona
     
 
     //Métodos :
-    void saludar()
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public int getestatua() {
+        return estatura;
+    }
+
+    public void estatura(int altura) {
+        this.estatura = altura;
+    }
+
+    public CuentaCorriente getCc() {
+        return cc;
+    }
+
+    public void setCc(CuentaCorriente cc) {
+        this.cc = cc;
+    }
+
+    public static boolean isVivo() {
+        return vivo;
+    }
+
+    public static void setVivo(boolean vivo) {
+        Persona.vivo = vivo;
+    }
+
+    public void saludar()
     {
         System.out.println("Hola soy" + nombre);
     }
