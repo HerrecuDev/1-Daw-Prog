@@ -9,7 +9,7 @@ public class hora
     
 
     //Contructores :
-    public Hora(int hora)
+    public int Hora(int hora) //Puede estar mal 
     {
         if (hora < 0 && hora > 23) 
         {
@@ -22,7 +22,7 @@ public class hora
             this.minutos = 0;
             this.segundos = 0;
         }
-        
+        return hora;
     }
 
     //Métodos :
@@ -89,6 +89,6 @@ public class hora
 
     @Override
     public String toString() {
-        return "hora [hora=" + hora + ":" + ", minutos=" + minutos + ":" + ", segundos=" + segundos + "]";
+        return "hora [hora=" + getHora() + ":" + ", minutos=" + getMinutos() + ":" + ", segundos=" + getSegundos(segundos) + "]";
     }
 }
