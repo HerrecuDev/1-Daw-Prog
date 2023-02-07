@@ -14,7 +14,7 @@ public class UsoHora
         int iteracciones = sc.nextInt();
 
 
-        Hora hora = new hora();
+        Hora hora = new Ho
     }
     
 }
