@@ -1,16 +1,16 @@
-package T6practicas.Clases;
+package code.T6practicas.Clases;
 
 public class Persona 
 {
     //Añadimos Atributos :
-    private String dni;
-    private String nombre;
+    public String dni;
+    public String nombre;
    
 
     private String apellidos;
-    private int edad;
+    public int edad;
     public int estatura;
-    private CuentaCorriente cc;
+    CuentaCorriente cc;
 
     static boolean vivo = true;
 
