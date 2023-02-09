@@ -1,4 +1,4 @@
-package T6practicas.Clases;
+package code.T6practicas.Clases;
 
 public class CuentaCorriente 
 {

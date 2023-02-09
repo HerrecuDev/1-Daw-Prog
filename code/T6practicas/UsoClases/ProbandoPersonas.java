@@ -1,5 +1,5 @@
-package T6practicas.UsoClases;
-import T6practicas.Clases.Persona;
+package code.T6practicas.UsoClases;
+import code.T6practicas.Clases.Persona;
 
 public class ProbandoPersonas 
 {
@@ -8,7 +8,7 @@ public class ProbandoPersonas
     {
         Persona p1 = new Persona("Sara", "Ruiz", 22, 180);
 
-        p1.altura = 190;
+        p1.estatura = 190;
         p1.setNombre("Sara_2");
 
         

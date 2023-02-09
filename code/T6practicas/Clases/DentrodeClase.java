@@ -1,4 +1,4 @@
-package T6practicas.Clases;
+package code.T6practicas.Clases;
 
 public class DentrodeClase 
 {
@@ -36,12 +36,12 @@ public class DentrodeClase
         Persona persona2 = new Persona();
         persona2.edad = 26;
         persona2.nombre = "Javi";
-        persona2.altura = 180;
+        persona2.estatura = 180;
         //Imprimimos por pantalla la definicion de la clase creada :
 
         System.out.println("Edad persona 2 =" + "\t" + persona2.edad);
         System.out.println("Nombre Persona 2 ="+"\t" +  persona2.nombre);
-        System.out.println("Altura de la Persona 2 ="+ "\t"  + persona2.altura);
+        System.out.println("Altura de la Persona 2 ="+ "\t"  + persona2.estatura);
         System.out.println("-----------------------------------------------------------");
 
         System.out.println(persona2.toString());
