@@ -24,8 +24,18 @@ public class Tren
     {
         String resultado = "";
 
-        resultado
+        resultado = 
     }
+
+
+    public enganchaVagon(Vagon [] vagones)
+    {
+        
+    }
+
+
+
+    
 
 
     
