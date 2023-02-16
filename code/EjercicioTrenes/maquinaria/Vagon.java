@@ -1,6 +1,6 @@
 package code.EjercicioTrenes.maquinaria;
 
-public class Vagon 
+class Vagon 
 {
     //Atributos
     private int numIndentificacion;
