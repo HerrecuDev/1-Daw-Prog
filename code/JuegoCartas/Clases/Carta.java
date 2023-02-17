@@ -1,4 +1,4 @@
-package code.JuegoCartas;
+package code.JuegoCartas.Clases;
 
 public class Carta 
 {
@@ -6,7 +6,7 @@ public enum Palo {ORO, ESPADAS, BASTOS, COPAS}
 
     //Atributos :
     private Palo palo;
-    private static int numero;
+    private int numero;
 
 
     //Contructores:
@@ -31,15 +31,18 @@ public enum Palo {ORO, ESPADAS, BASTOS, COPAS}
         this.palo = palo;
     }
 
-
-    public static int getNumero() {
+    public int getNumero() {
         return numero;
     }
 
 
-    public static void setNumero(int numero) {
-        Carta.numero = numero;
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
+    
+
+   
 
     /**
      * Devuelve true si la carta que hace la llamada es menor a la carta que se pasa
@@ -63,5 +66,7 @@ public enum Palo {ORO, ESPADAS, BASTOS, COPAS}
     {
         return this.numero + " de " + this.palo;
     }
+
+
     
 }
