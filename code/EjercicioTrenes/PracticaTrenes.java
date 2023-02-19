@@ -1,23 +1,30 @@
 package code.EjercicioTrenes;
 
+import code.EjercicioTrenes.maquinaria.Locomotora;
+import code.EjercicioTrenes.maquinaria.Tren;
+import code.EjercicioTrenes.personal.JefeEstacion;
+import code.EjercicioTrenes.personal.Maquinista;
+import code.EjercicioTrenes.personal.Mecanico;
+import code.EjercicioTrenes.personal.Mecanico.Especialidad;
+
 public class PracticaTrenes 
 {
     public static void main(String[] args) 
     { 	 
    	 
     	// CREACIÓN DE OBJETOS
-    	JefeEstacion jefe1 = new JefeEstacion("Jefe 1","1111111A");
-    	JefeEstacion jefe2 = new JefeEstacion("Jefe 2","2222222B");
+    	JefeEstacion jefe1 = new JefeEstacion("jefe1","1111111A");
+    	JefeEstacion jefe2 = new JefeEstacion("jefe2","2222222B");
 
         jefe1.modificarFechaCargo(1999, 10, 25);
-        System.out.println(“Jefe Estacion 1: “ + jefe1);
-        System.out.println(“Jefe Estacion 2: “ + jefe2);
+        System.out.println("Jefe Estacion 1:" + jefe1);
+        System.out.println("Jefe Estacion 2:"  + jefe2);
 
    	 
-    	Maquinista maquinista1 = new Maquinista("Maquinista 1","3333333C",2000);
-    	Maquinista maquinista2 = new Maquinista("Maquinista 2","4444444D",2000, “Senior”);
-    	Maquinista maquinista3 = new Maquinista("Maquinista 3","5555555E",2000; “Ayudante”);
-	    maquinista1.setRango(“Senior”);
+    	Maquinista maquinista1 = new Maquinista("Maquinista 1","3333333C",2000, "Ayudante");
+    	Maquinista maquinista2 = new Maquinista("Maquinista 2","4444444D",2000, "Senior");
+    	Maquinista maquinista3 = new Maquinista("Maquinista 3","5555555E",2000, "Ayudante");
+	    maquinista1.setRango("Senior");
 
 	
    	 
@@ -41,13 +48,17 @@ public class PracticaTrenes
     	tren3.enganchaVagon(150,140,"Madera");
    	 
 	    //Crea el mecánico mecánico 1 con tlf 555 y especialidad frenos
-      //Un vez creado asignalo a la locomotora2.
+		Mecanico mecanico1 = new Mecanico("Mecanico1", 555, Especialidad.FRENOS);
+
+      	//Un vez creado asignalo a la locomotora2.
+
+	   locomotora2 = new Locomotora(mecanico1);
 
 
         //mostrar trenes
-        System.out.println(“Tren 1: “ + tren1);
-        System.out.println(“Tren 1: “ + tren2);
-        System.out.println(“Tren 1: “ + tren3);
+        System.out.println("Tren 1: " + tren1);
+        System.out.println("Tren 2: " + tren2);
+        System.out.println("Tren 3: " + tren3);
             
 	 
 	}
