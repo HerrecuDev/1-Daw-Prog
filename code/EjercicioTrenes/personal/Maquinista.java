@@ -4,13 +4,13 @@ public class Maquinista
 {
     //Atributos
     private String nombre;
-    private int dni;
+    private String dni;
     private int sueldo;
     private String rango;
 
 
     //Contructores :
-    public Maquinista(String nombre ,int dni, int sueldo,String rango)
+    public Maquinista(String nombre ,String dni, int sueldo,String rango)
     {
         this.nombre = nombre;
         this.dni = dni;
@@ -20,7 +20,50 @@ public class Maquinista
 
 
     //Métdos :
+
+    public String getNombre() {
+        return nombre;
+    }
+
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+    public String getDni() {
+        return dni;
+    }
+
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+
+    public int getSueldo() {
+        return sueldo;
+    }
+
+
+    public void setSueldo(int sueldo) {
+        this.sueldo = sueldo;
+    }
+
+
+    public String getRango() {
+        return rango;
+    }
+
+
+    public void setRango(String rango) {
+        this.rango = rango;
+    }
+
     
+
+
+
     
     
 }

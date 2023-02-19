@@ -1,8 +1,10 @@
 package code.EjercicioTrenes.personal;
 
+
+
 public class Mecanico 
 {
-    private enum Especialidad {FRENOS, HIDRAULICA, ELECTRICIDAD, MOTOR};
+    public enum Especialidad {FRENOS, HIDRAULICA, ELECTRICIDAD, MOTOR};
 
 
     //Atributos
@@ -18,8 +20,35 @@ public class Mecanico
         this.especialidad = especialidad;
     }
 
-
+    
     //Métdos :
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getTelef() {
+        return telef;
+    }
+
+    public void setTelef(int telef) {
+        this.telef = telef;
+    }
+
+    public Especialidad getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(Especialidad especialidad) {
+        this.especialidad = especialidad;
+    }
+
+
+    
+    
     
     
     

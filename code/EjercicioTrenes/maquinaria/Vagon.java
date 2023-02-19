@@ -10,16 +10,57 @@ class Vagon
 
 
     //Contructores :
-    private Vagon(int identificador, int cargamax , int cargAct, String mercancia)
+    private Vagon( int cargamax , int cargAct, String mercancia)
     {
-        this.numIndentificacion = identificador;
         this.cargaMaxima = cargamax;
         this.cargaAct = cargAct;
         this.tipoMercancia = mercancia;
     }
 
-
     //Métdos :
+
+
+    public int getNumIndentificacion() {
+        return numIndentificacion;
+    }
+
+
+    public void setNumIndentificacion(int numIndentificacion) {
+        this.numIndentificacion = numIndentificacion;
+    }
+
+
+    public int getCargaMaxima() {
+        return cargaMaxima;
+    }
+
+
+    public void setCargaMaxima(int cargaMaxima) {
+        this.cargaMaxima = cargaMaxima;
+    }
+
+
+    public int getCargaAct() {
+        return cargaAct;
+    }
+
+
+    public void setCargaAct(int cargaAct) {
+        this.cargaAct = cargaAct;
+    }
+
+
+    public String getTipoMercancia() {
+        return tipoMercancia;
+    }
+
+
+    public void setTipoMercancia(String tipoMercancia) {
+        this.tipoMercancia = tipoMercancia;
+    }
+
+
+
     
     
     

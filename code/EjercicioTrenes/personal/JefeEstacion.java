@@ -7,11 +7,11 @@ public class JefeEstacion
 {
     //Atributos : 
     private String nombre;
-    private int dni;
+    private String dni;
     private String fechaJefe;
 
     //Contructores :
-    public JefeEstacion (String nombre , int dni)
+    public JefeEstacion (String nombre , String dni)
     {
         this.nombre = nombre;
         this.dni = dni;
@@ -27,6 +27,32 @@ public class JefeEstacion
        this.fechaJefe = fechaJefe.format(fechaModificada);
 
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getFechaJefe() {
+        return fechaJefe;
+    }
+
+    public void setFechaJefe(String fechaJefe) {
+        this.fechaJefe = fechaJefe;
+    }
+
+
 
     
 }
