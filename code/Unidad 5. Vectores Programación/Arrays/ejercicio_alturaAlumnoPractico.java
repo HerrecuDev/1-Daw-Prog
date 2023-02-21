@@ -111,15 +111,17 @@ public class ejercicio_alturaAlumnoPractico
 
 
         //Creamos un nuevo Array con una posicion mas :
-        String []nuevoArray = new String [array.length+1];
+        String []nuevoArray = new String [arrayNombre.length+1];
         //Copiamos el nuevo array en el anterior
         for (int i = 0; i < nuevoArray.length; i++) 
         {
-            nuevoArray[i] = array[i];
+            nuevoArray[i] = arrayNombre[i];
         }
         //Metemos en la ultima posicion el nuevo Array :
         
         nuevoArray[nuevoArray.length-1] = nuevoAlumno;
+
+        return nuevoAlumno;
 
 
     }
