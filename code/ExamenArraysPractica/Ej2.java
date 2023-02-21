@@ -4,6 +4,8 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import javax.swing.text.AbstractDocument.LeafElement;
+
 public class Ej2 
 {
     public static Scanner sc = new Scanner(System.in);
@@ -21,13 +23,22 @@ public class Ej2
 
             switch (opcion) 
             {
+                //Añadimos la Fruta con precio 1 y cantidad 0.
                 case "a":
                     frutasArray = insertarFruta(frutasArray);
-                    System.out.println(Arrays.toString(frutasArray));
+                    preciosArray = insertarPrecio(preciosArray);
+                    cantidadVendida = insertarCantidad(cantidadVendida);
+                    System.out.println("FRUTA = " +  Arrays.toString(frutasArray));
+                    System.out.println("Precio X Unidad " +  Arrays.toString(preciosArray));
+                    System.out.println("Cantidad Vendida " + Arrays.toString(cantidadVendida));
                     break;
+                //Añadimos una compra Realizada , buscando la fruta y modificando su cantidad.
                 case "b":
-      
+                
+                añadirCompra(frutasArray, cantidadVendida);
+                System.out.println(Arrays.toString(cantidadVendida));
                     break;
+                //Modifica el precio de la fruta segun la cantidad que tenga. Pregunta por el precio y x la fruta se modfica.
                 case "c":
       
                     break;
@@ -45,7 +56,7 @@ public class Ej2
             }
             
             
-        } while (!true);
+        } while (salir !=false);
     }
     
 
@@ -73,7 +84,7 @@ public class Ej2
     {
         //Preguntamos que fruta queremos introducir :
         System.out.println("¿Que fruta quiere introducir?");
-        String frutaAintroducir = sc.nextLine();
+        String frutaAintroducir = sc.nextLine().toLowerCase();
 
         //Creamos un nuevoArray para introducir las frutas :
         String [] nuevoArray = new String [ fruta.length+1];
@@ -86,8 +97,65 @@ public class Ej2
           nuevoArray[nuevoArray.length-1] = frutaAintroducir;
           return nuevoArray;
 
+    }
+
+    static double [] insertarPrecio ( double [] precio)
+    {   
+        int precioFruta = 1;
+
+        double [] nuevoArray = new double[precio.length+1];
+        for (int i = 0; i < precio.length; i++) 
+        {
+            nuevoArray[i] = precioFruta;
+        }
+
+        nuevoArray[nuevoArray.length-1] = precioFruta;
+
+        return nuevoArray;
+        
+    }
+
+    static double [] insertarCantidad (double [] cantidad)
+    {
+        int cantidadFruta = 0;
+
+        double [] nuevoArray = new double[cantidad.length+1];
+        for (int i = 0; i < cantidad.length; i++) 
+        {
+            nuevoArray[i] = cantidadFruta;
+        }
+
+        nuevoArray[nuevoArray.length-1] = cantidadFruta;
+
+        return nuevoArray;
+    }
+
+
+    static void añadirCompra( String [] fruta, double [] cantidadVendida)
+    {
+        System.out.println("¿Que Fruta desea añadir a la compra?");
+        String frutaAñadida = sc.nextLine().toLowerCase();
+
+        System.out.println("¿Que cantidad ha vendido?");
+        double cantidad = sc.nextDouble();
+
+       for (int i = 0; i < fruta.length; i++) 
+       {
+        if (fruta[i] == frutaAñadida) 
+        {
+            cantidadVendida[i] = cantidad;
+        }
+        
+       }
+
+
+
+
 
 
     }
+
+
+   
 
 }
