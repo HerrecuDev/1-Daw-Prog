@@ -65,11 +65,12 @@ public class Ej1
 
         for (int i = 0; i < array.length; i++) 
         {
-            for (int j = 1; j < matrizFinal.length; j++) 
+            for (int j = i+1; j < matrizFinal.length; j++) 
             {
                 if (array[i] == matrizFinal[j]) 
                 {
-                    matrizFinal[j] = max +1;
+                    max = max +1;
+                    matrizFinal[j] = max;
                 }
 
                 
