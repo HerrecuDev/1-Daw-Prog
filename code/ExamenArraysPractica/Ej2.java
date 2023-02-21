@@ -1,5 +1,7 @@
 package code.ExamenArraysPractica;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ej2 
@@ -20,7 +22,8 @@ public class Ej2
             switch (opcion) 
             {
                 case "a":
-                    
+                    frutasArray = insertarFruta(frutasArray);
+                    System.out.println(Arrays.toString(frutasArray));
                     break;
                 case "b":
       
@@ -66,6 +69,25 @@ public class Ej2
 
     }
 
-   // static
+    static String [] insertarFruta(String [] fruta)
+    {
+        //Preguntamos que fruta queremos introducir :
+        System.out.println("¿Que fruta quiere introducir?");
+        String frutaAintroducir = sc.nextLine();
+
+        //Creamos un nuevoArray para introducir las frutas :
+        String [] nuevoArray = new String [ fruta.length+1];
+
+        for (int i = 0; i < fruta.length; i++) 
+        {
+            nuevoArray [i] = fruta[i];
+        }
+          //Añade en la ultima posiicon del array el nuevo valor
+          nuevoArray[nuevoArray.length-1] = frutaAintroducir;
+          return nuevoArray;
+
+
+
+    }
 
 }
