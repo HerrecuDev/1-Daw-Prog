@@ -139,13 +139,13 @@ public class Ej2
         System.out.println("¿Que cantidad ha vendido?");
         double cantidad = sc.nextDouble();
 
-        insertarFruta(fruta);
+    
 
        for (int i = 0; i < fruta.length; i++) 
        {
         if (fruta[i].equals(frutaAñadida)) 
         {
-            cantidadVendida[i] = cantidad;
+            cantidadVendida[i] += cantidad;
         }
         
        }

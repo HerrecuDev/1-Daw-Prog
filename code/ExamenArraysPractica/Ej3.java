@@ -27,19 +27,19 @@ public class Ej3
 
     static void imprimirFormato (int [][] matriz) //Creamos una Matriz de % filas con 10 elementos cada una.
     {
-        for (int fila = 0; fila < matriz[0].length; fila++) 
+        for (int elemento = 0; elemento < matriz.length; elemento++) 
         {
-            System.out.print("Fila " + (fila+1) + "||");
+            
+            rellenamosMatriz(matriz[elemento],elemento);
            
-           
-            for (int elemento = 0; elemento < matriz.length; elemento++) 
+            for (int fila = 0; fila < matriz[0].length; fila++) 
             {
-              
-                rellenamosMatriz(matriz[elemento], fila, elemento);
-                System.out.print(" " + matriz[elemento][fila] + "\t");
+                System.out.print("Fila " + (fila+1) + "||");
+                
+                System.out.print(" " + matriz[fila][elemento] + "\t");
             
             }
-            System.out.println( "== " + sumaFilas(matriz, fila));
+            System.out.println( "== " + sumaFilas(matriz, elemento));
             System.out.println();
         }
         System.out.println("-------------------------------------------------------------------");
@@ -47,11 +47,11 @@ public class Ej3
 
 
 
-    static void rellenamosMatriz (int [] matriz, int fila, int elemento)
+    static void rellenamosMatriz (int [] matriz, int elemento)
     {
        int aleatorio = 0;
 
-       switch (fila) 
+       switch (elemento) 
        {
         case 0:
             aleatorio = (int)(Math.random()*5);
@@ -73,7 +73,7 @@ public class Ej3
         default:
             break;
        }
-       matriz[fila] = aleatorio;
+       matriz[elemento] = aleatorio;
 
     }
 
@@ -98,31 +98,55 @@ public class Ej3
 
     static void matrizFinal(int[][]matriz, int sumatorio)
     {
-        
-        int sumaTotal = 0;
-
-
-        for (int i = 0; i < matriz[0].length; i++) 
+       
+        for (int i = 0; i < matriz.length; i++) 
         {
-            for (int j = 0; j < matriz.length; j++) 
+            
+        
+            int sumaTotal = 0;
+            int numero0s = 0;
+
+
+            for (int j = 0; j < matriz[0].length; j++) 
             {
-                sumaTotal = sumaTotal + matriz[j][i];
                 
-
-                if (matriz[j][i] == 0 && sumaTotal > 24) 
-                {
-                    int resto = 24 - sumaTotal ;
-
-                    matriz[j][i] = resto;
-                }
-
-                else if (matriz[j][i] < 24) 
-                {
-                    int resto = sumaTotal -24;
-                    matriz[j][i] = resto;
-                }
-                matriz[j][i] = 0;
+                    sumaTotal = sumaTotal + matriz[i][j];
+                    if (matriz[i][j] == 0)
+                    {
+                        numero0s ++;
+                    }
+        
             }
+
+            int cantidadArepartir = (24-sumaTotal)/numero0s;
+
+
+            for (int j = 0; j < matriz[0].length; j++) 
+            {
+                
+                    if (matriz[i][j] == 0)
+                    {
+                        matriz[i][j] = cantidadArepartir;
+                    }
+        
+            }
+
+
+
+            //     if (matriz[j][i] == 0 && sumaTotal > 24) 
+            //     {
+            //         int resto = 24 - sumaTotal ;
+
+            //         matriz[j][i] = resto;
+            //     }
+
+            //     else if (matriz[j][i] < 24) 
+            //     {
+            //         int resto = sumaTotal -24;
+            //         matriz[j][i] = resto;
+            //     }
+            //     matriz[j][i] = 0;
+            // }
             
         }
        
