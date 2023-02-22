@@ -14,7 +14,7 @@ public class Ej2
         //Creamos los 3 Arrays :
         String[] frutasArray = new String [0];
         double[] preciosArray = new double [0];
-        double[] cantidadVendida= new double [0];
+        double[] cantidadVendida = new double [0];
 
         boolean salir = true;
         do 
@@ -35,7 +35,7 @@ public class Ej2
                 //Añadimos una compra Realizada , buscando la fruta y modificando su cantidad.
                 case "b":
                 
-                añadirCompra(frutasArray, cantidadVendida);
+                cantidadVendida = añadirCompra(cantidadVendida);
                 System.out.println(Arrays.toString(cantidadVendida));
                     break;
                 //Modifica el precio de la fruta segun la cantidad que tenga. Pregunta por el precio y x la fruta se modfica.
@@ -79,7 +79,7 @@ public class Ej2
         return opcion;
 
     }
-
+    //1. Insertamos la fruta , precio 1 y cantidad 0 en los Arrays correspondientes.
     static String [] insertarFruta(String [] fruta)
     {
         //Preguntamos que fruta queremos introducir :
@@ -130,7 +130,7 @@ public class Ej2
         return nuevoArray;
     }
 
-
+    //2.Modifica la cantidad en el Array cantidad Vendida de la fruta que le indiquemos que hemos comprado :
     static void añadirCompra( String [] fruta, double [] cantidadVendida)
     {
         System.out.println("¿Que Fruta desea añadir a la compra?");
@@ -139,21 +139,38 @@ public class Ej2
         System.out.println("¿Que cantidad ha vendido?");
         double cantidad = sc.nextDouble();
 
+        insertarFruta(fruta);
+
        for (int i = 0; i < fruta.length; i++) 
        {
-        if (fruta[i] == frutaAñadida) 
+        if (fruta[i].equals(frutaAñadida)) 
         {
             cantidadVendida[i] = cantidad;
         }
         
        }
 
+    }
+    //3. Modifica el precio de la fruta calculandolo segun la cantidad que se le ha pasado. Pregunta  x la Fruta y precio que tendria.
+    static double [] ModificarPRecio(double [] precio)
+    {
+        System.out.println("¿De que fruta desea Modificar el precio?");
+        String fruta = sc.nextLine().toLowerCase();
 
-
-
-
+        System.out.println("¿Cual es su nuevo Precio?");
+        double precioNuevo = sc.nextDouble();
 
     }
+
+    //4.Modifica todos los precios (Si la cantidad vendida es > media le suma al precio 0.25 si en cambio es < media le resta ala precio -0.15)
+
+    static void cambiosPrecios(double [] cantidad , double [] precio)
+    {
+
+    }
+
+
+    //5. Mostrar informe de todo : 
 
 
    
