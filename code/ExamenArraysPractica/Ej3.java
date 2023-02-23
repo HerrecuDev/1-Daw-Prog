@@ -15,9 +15,12 @@ public class Ej3
        
 
         imprimirFormato(matriz);
-        matrizFinal(matriz, elementos);
+
+        matrizFinal(matriz);
 
         imprimirFormato(matriz);
+
+        System.out.println("Tal como se puede apreciar en la segunda Matriz que imprimo no logro covertir los 0 en numeros para que el TOTAL = 24");
         
        
     }
@@ -25,33 +28,32 @@ public class Ej3
 
 
 
-    static void imprimirFormato (int [][] matriz) //Creamos una Matriz de % filas con 10 elementos cada una.
+    static void imprimirFormato (int [][] matriz) //Creamos una Matriz de 5 filas con 10 elementos cada una.
     {
-        for (int elemento = 0; elemento < matriz.length; elemento++) 
+        for (int fila = 0; fila < matriz[0].length; fila++) 
         {
-            
-            rellenamosMatriz(matriz[elemento],elemento);
-           
-            for (int fila = 0; fila < matriz[0].length; fila++) 
+            System.out.print("Fila " + (fila +1) + "||  ");
+
+            for (int elementos = 0; elementos < matriz.length; elementos++) 
             {
-                System.out.print("Fila " + (fila+1) + "||");
+                rellenamosMatriz(matriz[elementos], fila);
+                System.out.print(matriz[elementos][fila] + "\t");
                 
-                System.out.print(" " + matriz[fila][elemento] + "\t");
-            
             }
-            System.out.println( "== " + sumaFilas(matriz, elemento));
-            System.out.println();
+            System.out.println( " == " + sumaFilas(matriz));
+           System.out.println();
+            
         }
         System.out.println("-------------------------------------------------------------------");
     }
 
 
 
-    static void rellenamosMatriz (int [] matriz, int elemento)
+    static void rellenamosMatriz (int [] matriz, int fila)
     {
        int aleatorio = 0;
 
-       switch (elemento) 
+       switch (fila) 
        {
         case 0:
             aleatorio = (int)(Math.random()*5);
@@ -73,94 +75,74 @@ public class Ej3
         default:
             break;
        }
-       matriz[elemento] = aleatorio;
+       matriz[fila] = aleatorio;
 
     }
 
 
-    static int sumaFilas(int [][] matriz , int suma)
+    static int sumaFilas(int [][] matriz)
     {
         int sumaDeElementos = 0;
-        for (int i = 0; i < matriz[0].length; i++) 
+        for (int i = 0; i < matriz.length; i++) 
         {
            
-            for (int j = 0; j < matriz.length; j++) 
+            for (int j = 0; j < matriz[0].length; j++) 
             {
                 
-                sumaDeElementos = sumaDeElementos + matriz[j][i];
-                matriz[j][i] = 0;
+                sumaDeElementos = sumaDeElementos + matriz[i][j];
+                matriz[i][j] = 0;
+                
             }
+           
             
         }
         return sumaDeElementos;
     }
 
 
-    static void matrizFinal(int[][]matriz, int sumatorio)
+    static void matrizFinal(int[][]matriz)
     {
        
-        for (int i = 0; i < matriz.length; i++) 
+
+        for (int i = 0; i < matriz[0].length; i++) 
         {
+                
             
         
             int sumaTotal = 0;
             int numero0s = 0;
+            int cantidadArepartir = 0;
 
 
-            for (int j = 0; j < matriz[0].length; j++) 
+            for (int j = 0; j < matriz.length; j++) 
             {
                 
-                    sumaTotal = sumaTotal + matriz[i][j];
-                    if (matriz[i][j] == 0)
+                    sumaTotal = sumaTotal + matriz[j][i];
+                   
+                    if (matriz[j][i] == 0)
                     {
-                        numero0s ++;
+                        numero0s++;
                     }
+                    
         
             }
 
-            int cantidadArepartir = (24-sumaTotal)/numero0s;
-
-
-            for (int j = 0; j < matriz[0].length; j++) 
+            for (int k = 0; k < matriz.length; k++) 
             {
-                
-                    if (matriz[i][j] == 0)
+                sumaTotal = sumaTotal + matriz[k][i];
+                    if (matriz[k][i] == 0)
                     {
-                        matriz[i][j] = cantidadArepartir;
+                        numero0s++;
+                        
                     }
-        
+                  
             }
-
-
-
-            //     if (matriz[j][i] == 0 && sumaTotal > 24) 
-            //     {
-            //         int resto = 24 - sumaTotal ;
-
-            //         matriz[j][i] = resto;
-            //     }
-
-            //     else if (matriz[j][i] < 24) 
-            //     {
-            //         int resto = sumaTotal -24;
-            //         matriz[j][i] = resto;
-            //     }
-            //     matriz[j][i] = 0;
-            // }
+            cantidadArepartir = (24-sumaTotal)/numero0s;
             
+
         }
-       
-       
-
-       
-       
-       
-       
-       
-       
-            
-    }
     
+    }
 }
 
 
