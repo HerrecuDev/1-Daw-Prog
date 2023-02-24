@@ -5,20 +5,21 @@ package code.Unidad6ClasesHerencia;
         double sueldo;
         public Empleado (String nombre , int edad, double sueldo)
     {
-
-        super(nombre,edad);
-        this.nombre = nombre;
+        super(nombre);
+        // super(nombre,edad);
+        // this.nombre = nombre;
         this.edad = edad;
         this.sueldo = sueldo;
-        setAltura(sueldo);
+        //setAltura(sueldo);
+        
     }
 
 
 
     @Override
-    public String toString()
+    public String decirHola()
     {
-        return  super.decirHola() + "Hola Empleado";
+        return  super.decirHola() + "  Hola Empleado ";
     }
     }
 

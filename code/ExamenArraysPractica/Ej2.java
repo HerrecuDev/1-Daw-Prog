@@ -55,10 +55,10 @@ public class Ej2
                     System.out.println("Los nuevos precios son :" + Arrays.toString(preciosArray));
                     break;
                 case "e":
-                sc.nextLine();
-                System.out.println("-------Precio------" + "\n" + "----Cantidad----"+ "-----Ganancias----");
+                
+                System.out.println("                         [-Precio-]" +"                   [-Cantidad-]"+ "                                      [-Ganancias-]");
                 sacarInforme(frutasArray, cantidadVendida, preciosArray, ganancias);
-                System.out.println("Fruta:  " + Arrays.toString(frutasArray) + Arrays.toString(cantidadVendida) + " " + Arrays.toString(preciosArray) + " " + ganancias);
+                System.out.println("Fruta:  " + Arrays.toString(frutasArray) +  Arrays.toString(cantidadVendida) + Arrays.toString(preciosArray) + " " + ganancias);
                 
                     break;
                 case "x":
@@ -119,7 +119,9 @@ public class Ej2
         }
           //Añade en la ultima posiicon del array el nuevo valor
           nuevoArray[nuevoArray.length-1] = frutaAintroducir;
+          
           return nuevoArray;
+          
 
     }
 
@@ -171,6 +173,7 @@ public class Ej2
         {
             cantidadVendida[i] += cantidad;
         }
+        
         
        }
 
@@ -240,6 +243,7 @@ static void sacarInforme(String [] fruta, double [] cantidad, double [] precio, 
         ganancias = cantidadFruta*precioFruta;
         
     }
+
 }
    
 

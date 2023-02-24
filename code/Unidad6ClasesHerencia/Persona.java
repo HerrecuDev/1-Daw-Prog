@@ -2,9 +2,10 @@ package code.Unidad6ClasesHerencia;
 
 public class Persona 
 {
-    protected String nombre ;
-    public int edad;
+    private String nombre ; //Al ser private no se pued eusar en clases vecinas.
+    protected int edad; //Se puede usar debido a que es protected
     private double altura;
+    protected int dni;
 
     public Persona (String nombre , int edad)
     {
@@ -48,6 +49,26 @@ public class Persona
     public String decirHola()
     {
         return "Hola Persona";
+    }
+
+    @Override
+    public String toString()
+    {
+        return this.nombre;
+    }
+
+
+    @Override
+    public boolean equals(Object obejeto)
+    {
+        boolean resultado = false;
+        //convertir objeto a la clase persona 
+        Persona persona = (Persona)obejeto;
+        if (persona.dni == this.dni) 
+        {
+            resultado =  true;
+        }
+        return resultado;
     }
 
    
