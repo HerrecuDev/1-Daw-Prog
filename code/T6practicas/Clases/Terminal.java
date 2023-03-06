@@ -3,7 +3,7 @@ package code.T6practicas.Clases;
 public class Terminal 
 {
     //Atributos :
-    private String numero;
+    protected String numero;
     private int tiempo;
 
     //contructor :
