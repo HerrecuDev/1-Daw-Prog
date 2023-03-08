@@ -4,7 +4,7 @@ public class Terminal
 {
     //Atributos :
     protected String numero;
-    private int tiempo;
+    protected int tiempo;
 
     //contructor :
 
