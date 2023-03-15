@@ -63,19 +63,21 @@ public class Supermercado extends Negocio implements Tienda_I
     @Override
     public void nuevoCliente(Cliente cliente)
     {
-        Arrays.sort(colaClientes);
+        //Inserto el array de clientes
+        Clientes [] nuevaCola = new Cliente [this.colaClientes.length+1];
+        for (int i = 0; i < this.colaClientes.length; i++) 
+        {
+            nuevaCola[i] = this.colaClientes[i];
+        }
+        nuevaCola[nuevaCola.length-1] = cliente;
 
-        
+        this.colaClientes = nuevaCola;
     }
     @Override
     public void nuevoCliente(code.EjercicioCajeroColas.Clases.Cliente cliente) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'nuevoCliente'");
     }
-
-    //Implemento los métodos de la interfaz Tienda_I
-
-
 
     
     
