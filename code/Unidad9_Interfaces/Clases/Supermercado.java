@@ -63,9 +63,13 @@ public class Supermercado extends Negocio implements Tienda_I
     @Override
     public void nuevoCliente(Cliente cliente)
     {
-        Arrays.sort(colaClientes);
+        //inserto el array de clientes 
+        Cliente[] nuevacola = new Cliente [this.colaClientes.length+1];
 
-        
+        for (int i = 0; i < this.colaClientes.length; i++) 
+        {
+            
+        }
     }
     @Override
     public void nuevoCliente(code.EjercicioCajeroColas.Clases.Cliente cliente) {
