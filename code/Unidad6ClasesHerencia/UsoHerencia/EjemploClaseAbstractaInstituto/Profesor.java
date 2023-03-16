@@ -10,14 +10,14 @@ public abstract class Profesor extends Persona
 
 
     //Constructores : 
-    public Profesor(double salarioBase, String materia , boolean esTutor)
+    public Profesor(String nombre , String tlf , String email, double salarioBase, String materia , boolean esTutor)
     {
-        super(nombre,telf,email);
+        super(nombre,tlf,email);
         this.salarioBase = salarioBase;
         this.materia = materia;
         this.esTutor = esTutor;
     }
 
     //Metodos :
-    public abstract void salario();
+    public abstract double salario();
 }

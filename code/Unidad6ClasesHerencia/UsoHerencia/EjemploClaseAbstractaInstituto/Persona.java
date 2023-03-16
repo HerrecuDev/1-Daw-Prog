@@ -17,5 +17,11 @@ public class Persona
     }
 
     //Metodos :
+    @Override
+    public boolean equals(Object obj)
+    {
+        Persona pt = (Persona)obj;
+        return this.nombre.equals(pt.nombre) && this.email.equals(pt.email);
+    }
     
 }
