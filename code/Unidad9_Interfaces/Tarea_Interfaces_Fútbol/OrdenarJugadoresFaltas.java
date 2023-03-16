@@ -1,6 +1,8 @@
+package code.Unidad9_Interfaces.Tarea_Interfaces_Fútbol;
+
 import java.util.Comparator;
 
-import code.Unidad9_Interfaces.Tarea_Interfaces_Fútbol.Jugador;
+
 
 public class OrdenarJugadoresFaltas implements Comparator
 {

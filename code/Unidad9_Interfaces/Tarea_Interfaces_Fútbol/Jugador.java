@@ -14,14 +14,13 @@ public class Jugador implements Comparable
 
     //Contructores :
 
-    public Jugador(String nombre , String mote , int goles, int faltas)
+    public Jugador(String nombre , String mote )
     {
         this.nombeCompleto =  nombre;
-        this.mote = apodo;
+        this.apodo = mote;
         this.num_Licencia = asignacion_licencias;
         asignacion_licencias++;
-        this.numGoles =  goles;
-        this.numFaltas =  faltas;
+        
         
     }
 
