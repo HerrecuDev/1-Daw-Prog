@@ -1,6 +1,6 @@
 package code.Unidad9_Interfaces.Tarea_Interfaces_Fútbol;
 
-public class Jugador implements Comparable
+public class Jugador implements Comparable , Jugar_I
 {
     //Atributos :
 
@@ -8,13 +8,13 @@ public class Jugador implements Comparable
     private String apodo;
     private int num_Licencia;
     private int numGoles;
-    private int numFaltas;
+    private int numFaltas = 0;
 
     private static int asignacion_licencias = 1000; //Aunque crees a otros jugadores se autoincementa el codigo de la licencia a medida que añades jugadores.
 
     //Contructores :
 
-    public Jugador(String nombre , String mote )
+    public Jugador(String nombre , String mote)
     {
         this.nombeCompleto =  nombre;
         this.apodo = mote;
@@ -30,7 +30,7 @@ public class Jugador implements Comparable
     @Override
     public String toString()
     {
-        return "El jugador " + nombeCompleto +  "Alias " + apodo + "El numero de goles = " + "(" + numGoles + ")" + "Y el numero de faltas realizadas es = " + "(" + numFaltas + ")";
+        return "El jugador " + this.nombeCompleto +  "Alias " + this.apodo + "Con número de Licencia = " + this.num_Licencia+  "Ha anotado  = " + "(" + this.numGoles + ")"+" Goles " + " Y realizado  " + "(" + this.numFaltas +" Faltas" + ")";
     }
 
     @Override
@@ -82,6 +82,18 @@ public class Jugador implements Comparable
     }
 
    
+    //Generamos los metodos de Jugar_I:
+    @Override
+    public void hacerGol()
+    {
+       this.numGoles++;
+      
+    }
+    @Override
+    public void cometerFalta()
+    {
+        this.numFaltas++;
+    }
 
     
 }
