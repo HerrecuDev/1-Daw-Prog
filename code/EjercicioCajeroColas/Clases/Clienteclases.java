@@ -2,7 +2,7 @@ package code.EjercicioCajeroColas.Clases;
 
 import code.EjercicioCajeroColas.UsoCola.AccionesBanco;
 
-public class Cliente 
+public class Clienteclases 
 {
     //Atributo :
     private String nombre;
@@ -11,10 +11,10 @@ public class Cliente
 
     //Contructores :
 
-    public Cliente (String nombre, AccionesBanco accion , double importe)
+    public Clienteclases (String nombre, int i , double importe)
     {
         this.nombre = nombre;
-        this.accionArealizar = accion;
+        this.accionArealizar = i;
         this.importe = importe;
     }
 

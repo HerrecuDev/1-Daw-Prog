@@ -1,7 +1,7 @@
 package code.EjercicioCajeroColas;
 
 import code.EjercicioCajeroColas.Clases.Caja;
-import code.EjercicioCajeroColas.Clases.Cliente;
+import code.EjercicioCajeroColas.Clases.Clienteclases;
 
 public class UsoCola 
 {
@@ -13,20 +13,20 @@ public class UsoCola
         Caja caja = new Caja();
         
 
-        Cliente cliente1 = new Cliente("Andres", AccionesBanco.RETIRAR, 100);
+        Clienteclases cliente1 = new Clienteclases("Andres", AccionesBanco.RETIRAR, 100);
         caja.cogerTurno(cliente1);
 
-        Cliente cliente2 = new Cliente("Javier", AccionesBanco.RETIRAR, 540.5);
+        Clienteclases cliente2 = new Clienteclases("Javier", AccionesBanco.RETIRAR, 540.5);
         caja.cogerTurno(cliente2);
 
-        Cliente cliente3 = new Cliente("Sara", AccionesBanco.RETIRAR, 1500);
+        Clienteclases cliente3 = new Clienteclases("Sara", AccionesBanco.RETIRAR, 1500);
         caja.cogerTurno(cliente3);
 
         caja.estadoCola();
         caja.atender();//Antendemos a Andres.
         System.out.println(caja.saldo());
        
-        Cliente cliente4 = new Cliente("Miguel", AccionesBanco.INGRESAR, 2000);
+        Clienteclases cliente4 = new Clienteclases("Miguel", AccionesBanco.INGRESAR, 2000);
 
         caja.cogerTurno(cliente4);
         caja.atender(); //Atendemos a Javier

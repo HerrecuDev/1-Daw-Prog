@@ -9,14 +9,14 @@ public class Caja
    
     //Atributo :
     private double saldoDisponible;
-    private Cliente[] colaClientes;
+    private Clienteclases[] colaClientes;
     
 
     //Contructores :
     public Caja()
     {
         this.saldoDisponible = 1000;
-        this.colaClientes = new Cliente[0];
+        this.colaClientes = new Clienteclases[0];
 
     }
 
@@ -24,9 +24,9 @@ public class Caja
 
     //Metodos : 
     
-    public void cogerTurno(Cliente cliente)
+    public void cogerTurno(Clienteclases cliente)
     {
-        Cliente [] nuevaCola = new Cliente[this.colaClientes.length +1];
+        Clienteclases [] nuevaCola = new Clienteclases[this.colaClientes.length +1];
 
         for (int i = 0; i < this.colaClientes.length; i++) 
         {
@@ -42,7 +42,7 @@ public class Caja
     public void atender()
     {
         //Cogemos al cliente que le toca su turno
-        Cliente clienteAtendido = desencolar();
+        Clienteclases clienteAtendido = desencolar();
 
         System.out.println("Atendiendo a : " + clienteAtendido.getNombre());
 
@@ -77,11 +77,11 @@ public class Caja
      * @return
      */
 
-    private Cliente desencolar()
+    private Clienteclases desencolar()
     {
-        Cliente clienteAtendido = this.colaClientes[0];
+        Clienteclases clienteAtendido = this.colaClientes[0];
 
-        Cliente [] nuevaCola = new Cliente [this.colaClientes.length-1];
+        Clienteclases [] nuevaCola = new Clienteclases [this.colaClientes.length-1];
 
         for (int i = 0; i < nuevaCola.length; i++) 
         {
