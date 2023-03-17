@@ -1,6 +1,6 @@
 package code.Unidad9_Interfaces.Tarea_Interfaces_Fútbol;
 
-
+import java.util.Arrays;
 
 public class JugadoresSpain 
 {
@@ -25,15 +25,25 @@ public class JugadoresSpain
         Jugador j6 = new Jugador("Pedro Sánchez", "El negro mierda");
 
 
+
         j1.cometerFalta();
         j1.cometerFalta();
         j3.hacerGol();
         j6.cometerFalta();
+        j1.hacerGol();
+        j1.hacerGol();
+        j6.hacerGol();
+        j6.hacerGol();
+        j6.hacerGol();
 
+        System.out.println(j1.compareTo(j6));
+        OrdenarJugadoresGoles compararGoles = new OrdenarJugadoresGoles();
+        compararGoles.compare(j1, j6);
 
         System.out.println(j1);
         System.out.println(j2);
         System.out.println(j6);
+        //Arrays.sort(Jugad);
     }
     
 }

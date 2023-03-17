@@ -30,7 +30,7 @@ public class Jugador implements Comparable , Jugar_I
     @Override
     public String toString()
     {
-        return "El jugador " + this.nombeCompleto +  "Alias " + this.apodo + "Con número de Licencia = " + this.num_Licencia+  "Ha anotado  = " + "(" + this.numGoles + ")"+" Goles " + " Y realizado  " + "(" + this.numFaltas +" Faltas" + ")";
+        return "El jugador " + this.nombeCompleto +  " Alias " + this.apodo + " Con número de Licencia = " + this.num_Licencia+  " Ha anotado  = " + "(" + this.numGoles + ")"+" Goles " + " Y realizado  " + "(" + this.numFaltas +" Faltas" + ")";
     }
 
     @Override
