@@ -1,4 +1,6 @@
-import code.Unidad9_Interfaces.Tarea_Interfaces_Fútbol.Jugador;
+package code.Unidad9_Interfaces.Tarea_Interfaces_Fútbol;
+
+
 
 public class JugadoresSpain 
 {
@@ -24,11 +26,14 @@ public class JugadoresSpain
 
 
         j1.cometerFalta();
+        j1.cometerFalta();
         j3.hacerGol();
         j6.cometerFalta();
 
 
         System.out.println(j1);
+        System.out.println(j2);
+        System.out.println(j6);
     }
     
 }

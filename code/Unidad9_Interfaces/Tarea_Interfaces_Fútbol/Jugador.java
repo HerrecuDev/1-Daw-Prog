@@ -8,9 +8,9 @@ public class Jugador implements Comparable , Jugar_I
     private String apodo;
     private int num_Licencia;
     private int numGoles;
-    private int numFaltas = 0;
+    private int numFaltas;
 
-    private static int asignacion_licencias = 1000; //Aunque crees a otros jugadores se autoincementa el codigo de la licencia a medida que añades jugadores.
+    private static int asignacion_licencias = 1001; //Aunque crees a otros jugadores se autoincementa el codigo de la licencia a medida que añades jugadores.
 
     //Contructores :
 
