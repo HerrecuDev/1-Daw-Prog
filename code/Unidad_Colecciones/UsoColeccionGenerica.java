@@ -30,5 +30,8 @@ public class UsoColeccionGenerica
         //LA FORMA CORRECTA ES :
         ColeccionGenerica<Integer> ColeccionEntero =  new ColeccionGenerica<Integer>();
 
+
+       // ColeccionGenerica<Integer>[] arrayColeccion = new ColeccionGenerica<Integer>[5]; [NO ES POSIBLE DECLARARLO DE ESTA FORMA]
+
     }
 }

@@ -1,6 +1,6 @@
 package code.Unidad9_Interfaces.interfaces;
 
-public class Perro implements Sonido_I 
+public class Perro implements Sonido_I ,Comparable<Perro>
 {
     String nombre;
     String raza;
@@ -20,5 +20,15 @@ public class Perro implements Sonido_I
     public void durmiendo()
     {
         System.out.println("Perro voz durmiendo");
+    }
+
+    @Override
+    public int compareTo(Perro o)
+    {
+        return this.nombre.compareTo(nombre);
+    }
+    public String toString()
+    {
+        return this.nombre;
     }
 }
