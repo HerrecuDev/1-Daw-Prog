@@ -59,7 +59,7 @@ public class EjemploArrayList
 
         String primero = listaLincada.getFirst();
         String ultimo =listaLincada.getLast();
-        System.out.println("Primero " + primero + "Ultimo " + ultimo);
+        System.out.println("Primero " + primero + "  Ultimo " + ultimo);
 
 
 

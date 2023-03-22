@@ -1,6 +1,9 @@
 package code.Unidad_Colecciones.EjerciciosListasyColecciones;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Stack;
+import java.util.logging.Handler;
 
 public class Ejercicio1Listas 
 {
@@ -21,12 +24,17 @@ public class Ejercicio1Listas
         }
         System.out.println(listaNumeros);
 
-        
 
-        
+        System.out.println("-------------------HASHET------------------");
+
+        HashSet<Integer> numeroSinrepetir = new HashSet<>(listaNumeros);
+        System.out.println(numeroSinrepetir);
 
 
-
+        for (int i = 0; i < listaNumeros.size(); i++) 
+        {
+            
+        }
 
 
 
