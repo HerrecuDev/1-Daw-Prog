@@ -22,22 +22,43 @@ public class Ejercicio1Listas
 
             
         }
+
+        //Mostramos la lista :
         System.out.println(listaNumeros);
 
-
+        //Mostramos los numeros que estan en la lista:
         System.out.println("-------------------HASHET------------------");
 
         HashSet<Integer> numeroSinrepetir = new HashSet<>(listaNumeros);
         System.out.println(numeroSinrepetir);
 
+        //Conjunto con los numeros repetidos :
+        HashSet<Integer> conjuntoRepetidos = new HashSet<>();
+        HashSet<Integer> conjunto1Aparicion = new HashSet<>();
 
-        for (int i = 0; i < listaNumeros.size(); i++) 
+       for (int i = 0; i < listaNumeros.size(); i++) 
+       {
+        int numeroLeido = listaNumeros.get(i);
+
+        if (!conjuntoRepetidos.contains(numeroLeido) && !conjunto1Aparicion.contains(numeroLeido)) 
         {
+            conjunto1Aparicion.add(numeroLeido);
+        }
+
+        else
+        {
+            conjuntoRepetidos.add(numeroLeido);
+            conjunto1Aparicion.remove(numeroLeido);
             
         }
 
 
+        
+       }
+       System.out.println("Conjuntos Repetidos " + conjuntoRepetidos);
+       System.out.println("Conjuntos Aparecen 1 vez = " + conjunto1Aparicion);
 
+     
     }
     
 }
