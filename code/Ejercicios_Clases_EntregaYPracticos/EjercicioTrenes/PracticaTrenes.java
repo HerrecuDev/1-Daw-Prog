@@ -1,11 +1,11 @@
-package code.EjercicioTrenes;
+package code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes;
 
-import code.EjercicioTrenes.maquinaria.Locomotora;
-import code.EjercicioTrenes.maquinaria.Tren;
-import code.EjercicioTrenes.personal.JefeEstacion;
-import code.EjercicioTrenes.personal.Maquinista;
-import code.EjercicioTrenes.personal.Mecanico;
-import code.EjercicioTrenes.personal.Mecanico.Especialidad;
+import code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes.maquinaria.Locomotora;
+import code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes.maquinaria.Tren;
+import code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes.personal.JefeEstacion;
+import code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes.personal.Maquinista;
+import code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes.personal.Mecanico;
+import code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes.personal.Mecanico.Especialidad;
 
 public class PracticaTrenes 
 {

@@ -1,4 +1,4 @@
-package code.EjercicioTrenes.personal;
+package code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes.personal;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

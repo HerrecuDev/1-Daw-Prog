@@ -1,4 +1,4 @@
-package code.EjercicioTrenes.maquinaria;
+package code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes.maquinaria;
 
 class Vagon 
 {

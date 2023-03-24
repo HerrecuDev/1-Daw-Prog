@@ -1,8 +1,8 @@
-package code.EjercicioCajeroColas.Clases;
+package code.Unidad6ClasesHerencia.EjercicioCajeroColas.Clases;
 
 import java.util.Arrays;
 
-import code.EjercicioCajeroColas.UsoCola.AccionesBanco;
+import code.Unidad6ClasesHerencia.EjercicioCajeroColas.UsoCola.AccionesBanco;
 
 public class Caja 
 {

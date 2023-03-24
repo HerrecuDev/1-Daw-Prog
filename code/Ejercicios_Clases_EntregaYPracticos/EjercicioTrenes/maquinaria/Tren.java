@@ -1,9 +1,9 @@
-package code.EjercicioTrenes.maquinaria;
+package code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes.maquinaria;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
-import code.EjercicioTrenes.personal.Maquinista;
+import code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes.personal.Maquinista;
 
 public class Tren
 {

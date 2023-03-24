@@ -1,8 +1,8 @@
-package code.EjercicioTrenes.maquinaria;
+package code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes.maquinaria;
 
 import java.time.LocalDate;
 
-import code.EjercicioTrenes.personal.Mecanico;
+import code.Ejercicios_Clases_EntregaYPracticos.EjercicioTrenes.personal.Mecanico;
 
 public class Locomotora 
 {
@@ -27,9 +27,9 @@ public class Locomotora
         this.antiguedad = ant;
         
     }
-    public Locomotora (Mecanico mecanico)
+    public Locomotora (Mecanico mecanico1)
     {
-        this.mecanico = mecanico;
+        this.mecanico = mecanico1;
     }
 
     //Métdos :

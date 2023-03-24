@@ -1,7 +1,7 @@
-package code.EjercicioCajeroColas;
+package code.Unidad6ClasesHerencia.EjercicioCajeroColas;
 
-import code.EjercicioCajeroColas.Clases.Caja;
-import code.EjercicioCajeroColas.Clases.Clienteclases;
+import code.Unidad6ClasesHerencia.EjercicioCajeroColas.Clases.Caja;
+import code.Unidad6ClasesHerencia.EjercicioCajeroColas.Clases.Clienteclases;
 
 public class UsoCola 
 {

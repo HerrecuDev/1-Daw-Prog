@@ -1,6 +1,6 @@
 package code.Unidad_Colecciones;
 
-import code.EjercicioCajeroColas.Clases.Clienteclases;
+import code.Unidad6ClasesHerencia.EjercicioCajeroColas.Clases.Clienteclases;
 import code.Unidad9_Interfaces.Clases.Cliente;
 import code.Unidad9_Interfaces.interfaces.Perro;
 
