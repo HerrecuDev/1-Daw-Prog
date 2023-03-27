@@ -8,9 +8,9 @@ public class ProfesorTitular extends Profesor
     private int antiguead;
 
     //Contructor:
-    public ProfesorTitular(String nombre , String tlf,String email,double salarioBase , String materia , boolean esTutor , int antiguead)
+    public ProfesorTitular(String nombre , String tlf,String email,double salarioBase , String materia , String string , int antiguead)
     {
-        super(nombre,tlf,email, salarioBase, materia, esTutor);
+        super(nombre,tlf,email, salarioBase, materia, string);
         this.antiguead = antiguead;
 
     }

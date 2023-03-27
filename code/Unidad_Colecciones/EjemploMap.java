@@ -45,8 +45,8 @@ public class EjemploMap
         System.out.println(alumnos);
 
 
-        HashSet<Integer> conjuntoClaves = new HashSet<>(alumnos.keySet());
-        System.out.println("Las claves son  " + conjuntoClaves);
+        HashSet<Integer> conjuntoClaves = new HashSet<>(alumnos.keySet());//Devuelve una coleccion de todas las claves que tenemos.
+        System.out.println("Las claves son  " + conjuntoClaves);//Imprimimos los elementos de la coleccion.
 
         for (Integer clave : conjuntoClaves) 
         {
@@ -57,7 +57,7 @@ public class EjemploMap
 
 
 
-        HashMap<Integer , ProfesorTitular> claustro = new HashMap<>();
+        HashMap<Integer , ProfesorTitular> claustro = new HashMap<>();//Diccionario que contiene la clase ProfesorTitutlar.
         ProfesorTitular p1 = new ProfesorTitular("Nombre", "555", "pape", 1000, "j", "d", 10);
         claustro.put(1, p1);
 
