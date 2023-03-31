@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejercicio6",
+            "request": "launch",
+            "mainClass": "code.Unidad_Colecciones.Ejercicios_PDF_colecciones.Ejercicio6",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Launch UsoRadioFM",
             "request": "launch",
             "mainClass": "T6practicas.UsoClases.UsoRadioFM",
