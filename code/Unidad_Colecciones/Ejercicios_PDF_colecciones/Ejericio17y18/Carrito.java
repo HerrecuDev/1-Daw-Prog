@@ -55,17 +55,23 @@ public class Carrito
     @Override
     public String toString()
     {
-       return this
+       return this.
     }
 
-    @Override
+    public double importeTotal()
+    {
+    double precioTotal = 0;
 
-    public boolean equals(Object obj) {
-        // dos elementos son iguales si tienen el mismo nombre y mismo precio
-        Elemento elem = (Elemento)obj;
-        return this.producto.equals(elem.getProducto()) && this.precio == elem.getPrecio();
+        for ( Elemento elem: carrito) 
+        {
+            precioTotal += (elem.getPrecio() * elem.getCantidad());
+        }
+        return precioTotal;
+
+        
     }
 
+  
 
     
 }

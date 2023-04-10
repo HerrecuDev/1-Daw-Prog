@@ -41,6 +41,15 @@ public class Elemento
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+
+
+   @Override
+   public String toString()
+   {
+    return this.producto + " " + this.precio + " " + this.cantidad;
+   }
+   
     
 
    
