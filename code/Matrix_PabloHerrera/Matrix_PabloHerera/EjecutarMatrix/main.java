@@ -10,8 +10,23 @@ public class main
     public static void main(String[] args) 
     {
         //Generamos 200 PErsonas Genericas :
-        ArrayList<Personas_genericas> listado = new ArrayList<>();
+        Personas_genericas p = new Personas_genericas(null, null, 0);
+        ArrayList<Personaje> listadoPersonas =  new ArrayList<>();
+
+        listadoPersonas = p.factoriaPersonas(200);
+
+        for (int index = 0; index < listadoPersonas.size(); index++) 
+        {
+            System.out.println(listadoPersonas.get(index).mostrarInformacion());
+        }
+
+
+       
+
+
         
+        
+
     }
 
 
