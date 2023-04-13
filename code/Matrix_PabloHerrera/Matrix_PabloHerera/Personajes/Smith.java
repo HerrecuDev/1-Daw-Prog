@@ -1,9 +1,10 @@
-package Matrix.Personajes;
+package code.Matrix_PabloHerrera.Matrix_PabloHerera.Personajes;
 
 import java.sql.Date;
 import java.text.DateFormat;
+import java.time.LocalDateTime;
 
-public class Smith extends Personajes
+public class Smith extends Personaje
 {
 
     //Atributos:
@@ -11,9 +12,9 @@ public class Smith extends Personajes
 
 
     //Contructores 
-    public Smith(String nombre, String ciudad, DateFormat fecha, Date hora, int edad, int poderInfeccion)
+    public Smith(String nombre, String ciudad, LocalDateTime fecha, int edad, int poderInfeccion)
     {
-        super(nombre, ciudad, fecha, hora, edad);
+        super(null, null, fecha, edad);
         this.poderInfeccion = (int)(Math.random()*11);
     }
 
