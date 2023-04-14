@@ -9,13 +9,16 @@ public class Neo extends Personaje
 
     //ATRIBUTO :
     private boolean elegido;
+    private int poder;
 
 
     //Contructor :
-    public Neo (String nombre , String ciudad , LocalDateTime fecha, int edad , boolean elegido)
+    public Neo (int id ,String nombre , String ciudad ,int edad, boolean elegido, int poder)
     {
-        super(nombre, ciudad, edad);
+        super(id, nombre, ciudad, edad);
+        this.fecha = LocalDateTime.now();
         this.elegido = elegido;
+        this.poder = poder;
 
 
     }
@@ -24,7 +27,7 @@ public class Neo extends Personaje
     @Override
     public String mostrarInformacion() 
     {
-        return this.nombre + " " + this.ciudad + " " + this.elegido;
+        return this.id + " " + this.nombre + " " + this.ciudad + " " + this.elegido;
     }
     
 }

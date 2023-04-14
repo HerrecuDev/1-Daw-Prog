@@ -13,9 +13,9 @@ public class Personas_genericas extends Personaje
 
 
     //Contructores :
-    public Personas_genericas(String nombre , String ciudad, int edad )
+    public Personas_genericas(int id,String nombre , String ciudad, int edad )
     {
-       super(nombre, ciudad, edad);
+       super(id, nombre, ciudad, edad);
        this.probabilidadMorir = (int)(Math.random()*101);
         
     }
@@ -25,7 +25,7 @@ public class Personas_genericas extends Personaje
     @Override
     public String mostrarInformacion() 
     {
-        return this.nombre + " " + this.ciudad + " " + this.probabilidadMorir;
+        return this.id + " " + this.nombre + " " + this.ciudad + " " + this.probabilidadMorir;
     }
 
     //Generamos las 200 Personas Genericas 
@@ -46,7 +46,7 @@ public class Personas_genericas extends Personaje
             int ciudadalAzar = (int)(Math.random() * ciudad.length);
             String ciudadNueva = ciudad[ciudadalAzar];
 
-            Personas_genericas pg = new Personas_genericas(nuevoNombre, ciudadNueva, edad);
+            Personas_genericas pg = new Personas_genericas(id,nuevoNombre, ciudadNueva, edad);
 
             listadoPersonas.add(pg);
         }
@@ -54,6 +54,24 @@ public class Personas_genericas extends Personaje
         return listadoPersonas;
         
     }
+
+    public ArrayList porcentajeMorir(int probabilidadMorir)
+    {
+        ArrayList<Personaje> listadoPersonas = new ArrayList<>();
+        probabilidadMorir = this.probabilidadMorir;
+        
+        if (probabilidadMorir<30) 
+        {
+            
+        }
+
+        else{
+            probabilidadMorir = (probabilidadMorir -10);
+        }
+    }
+
+
+
 
 
 

@@ -12,9 +12,10 @@ public class Smith extends Personaje
 
 
     //Contructores 
-    public Smith(String nombre, String ciudad, LocalDateTime fecha, int edad, int poderInfeccion)
+    public Smith(int id, String nombre, String ciudad, LocalDateTime fecha, int edad, int poderInfeccion)
     {
-        super(null, null, fecha, edad);
+        super(id, nombre, ciudad, edad);
+        this.fecha = LocalDateTime.now();
         this.poderInfeccion = (int)(Math.random()*11);
     }
 
@@ -24,7 +25,7 @@ public class Smith extends Personaje
     @Override
     public String mostrarInformacion() 
     {
-        return this.nombre + " " + this.ciudad + " " + this.poderInfeccion;
+        return this.id + " " + this.nombre + " " + this.ciudad + " " + this.poderInfeccion;
     }
 
     

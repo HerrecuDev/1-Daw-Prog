@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 public abstract class Personaje
 {
     //Atributos :
+    protected int id;
     protected String nombre;
     protected String ciudad;
     protected LocalDateTime fecha;
@@ -16,8 +17,9 @@ public abstract class Personaje
 
     //Contructores :
 
-    public Personaje(String nombre , String ciudad , int edad)
+    public Personaje(int id, String nombre , String ciudad , int edad)
     {
+        this.id = id;
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.fecha = LocalDateTime.now();
