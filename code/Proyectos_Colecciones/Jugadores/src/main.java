@@ -11,6 +11,8 @@ public class main
     public static void main(String[] args) 
     {
         HashMap<Integer, Jugador> plantilla = new HashMap<>();
+
+        
     }
 
     /**
@@ -96,6 +98,42 @@ public class main
     {
         Set<Integer> tipoJugador = plantilla.keySet();
 
+        switch (tipoJugador) {
+            case 0:
+                plantilla.get(posicion);
+                break;
+            case 1:
+                plantilla.get(posicion);
+                break;
+
+            case 2:
+                plantilla.get(posicion);
+                break;
+
+            case 3:
+                plantilla.get(posicion);
+                break;
+        
+            default:
+            System.out.println("Posicion inexistente");
+                break;
+        }
+
+    }
+
+
+    static boolean editarJugador(Map<Integer , Jugador> plantilla , Integer dorsal)
+    {
+        Set<Integer> numeros = plantilla.keySet();
+        if (numeros.add(dorsal)) 
+        {
+            
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
 }
