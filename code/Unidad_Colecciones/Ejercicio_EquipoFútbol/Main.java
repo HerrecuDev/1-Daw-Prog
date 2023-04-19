@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-public class main 
+public class Main 
 {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) 
@@ -25,7 +25,7 @@ public class main
         if (!plantilla.containsKey(dorsal)) 
         {
             
-        
+           
             System.out.println("Introducir dni :");
             String dni = sc.nextLine();
 
@@ -93,38 +93,56 @@ public class main
         }
     }
 
-
+/**
+ * Mostramos una lista delos jugadores que juegan en la misma posicion
+ * @param plantilla
+ * @param posicion
+ */
     static void mostrar(Map<Integer , Jugador> plantilla, String posicion)
     {
-        Set<Integer> tipoJugador = plantilla.keySet();
 
-        switch (tipoJugador) {
-            case 0:
-                plantilla.get(posicion);
-                break;
-            case 1:
-                plantilla.get(posicion);
-                break;
+        Jugador.Posicion pos = Jugador.Posicion.valueOf(posicion.toUpperCase());
 
-            case 2:
-                plantilla.get(posicion);
-                break;
+        Set<Integer> numeros = plantilla.keySet();
 
-            case 3:
-                plantilla.get(posicion);
-                break;
-        
-            default:
-            System.out.println("Posicion inexistente");
-                break;
+        boolean compartePosicion = false;
+        String nombres = "";
+
+        for (Integer numero : numeros) 
+        {
+            Jugador jugador = plantilla.get(numero);
+            if (jugador.getPosicionCampo().equals(pos)) 
+            {
+                compartePosicion = true;
+            }
         }
+
+        if (compartePosicion) 
+        {
+            System.out.println("LOS SIGUIENTES JUGADORES COMPARTEN LA POSICION " + pos + "----");
+            System.out.println(nombres);
+        }
+
+        else
+        {
+            System.out.println("NINGUNO DE LOS JUGADORES COMPARTEN LA POSICION DE " + pos);
+        }
+
+        
 
     }
 
 
+    /**
+     * Editamos algunos datos del jugador. Unicamente no editamos ni DNI ni DOrsal.
+     * @param plantilla
+     * @param dorsal
+     * @return
+     */
+
     static boolean editarJugador(Map<Integer , Jugador> plantilla , Integer dorsal)
     {
-        Set<Integer> numeros = plantilla.keySet();
+       
         if (numeros.add(dorsal)) 
         {
             
