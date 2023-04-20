@@ -2,7 +2,7 @@ package code.Unidad_Colecciones.Ejercicio_EquipoFútbol;
 
 public class Jugador 
 {
-    enum Posicion{PORTERO, DEFENSA,CENTROCAMPISTA, DELANTERO};
+    public enum Posicion{PORTERO, DEFENSA,CENTROCAMPISTA, DELANTERO};
     //Atributos :
     protected String dni;
     protected String nombre;

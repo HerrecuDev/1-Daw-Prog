@@ -1,9 +1,12 @@
-package code.Unidad_Colecciones.Ejercicio_EquipoFútbol;
+package code.Proyectos_Colecciones.Jugadores.src;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
+
+import code.Unidad_Colecciones.Ejercicio_EquipoFútbol.Jugador;
+import code.Unidad_Colecciones.Ejercicio_EquipoFútbol.Jugador.Posicion;
 
 public class Main 
 {
@@ -143,15 +146,7 @@ public class Main
     static boolean editarJugador(Map<Integer , Jugador> plantilla , Integer dorsal)
     {
        
-        if (numeros.add(dorsal)) 
-        {
-            
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        
     }
     
 }
