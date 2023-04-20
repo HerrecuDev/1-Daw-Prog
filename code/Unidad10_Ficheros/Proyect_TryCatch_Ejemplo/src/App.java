@@ -36,9 +36,15 @@ public class App {
         catch(Exception atitException)
         {
             System.out.println(atitException.getMessage());
+        }finally{
+            //SE USA PARA CERRAR CONXIONES , FICHEROS ETC....
         }
 
         System.out.println();
 
+        
     }
+
+    
+    
 }
