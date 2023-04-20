@@ -6,13 +6,14 @@ public class Lectura_Teclado
 {
     //Atributo :
     private Scanner sc;
+    public int nextLine;
 
 
 
     //Contructor : 
-    public Lectura_Teclado(Scanner sc)
+    public Lectura_Teclado()
     {
-        this.sc = new Scanner(System.in);
+        sc = new Scanner(System.in);
     }
 
 
@@ -65,7 +66,7 @@ public class Lectura_Teclado
 
     public void leerFloat(float numero)
     {
-        
+
     }
 
 
