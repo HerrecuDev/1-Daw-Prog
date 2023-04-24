@@ -78,4 +78,7 @@ public class Lectura_Teclado
 
 
     public void finalizarLectura()
+    {
+        
+    }
 }
