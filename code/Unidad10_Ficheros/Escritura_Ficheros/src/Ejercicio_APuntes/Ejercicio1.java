@@ -9,18 +9,17 @@ public class Ejercicio1
 {
     public static void main(String[] args) throws IOException 
     {
-        // Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         String nombreFichero = "ficheroTexto.txt";
         String path = "src/recursos/";
 
-        // FileWriter fileWriter = null;
-        // BufferedWriter bufferedWriter = null;
+        FileWriter fileWriter = null;
+        BufferedWriter bufferedWriter = null;
 
-        try (FileWriter fileWriter = new FileWriter(path + nombreFichero,false);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            Scanner sc = new Scanner(System.in))
+        try  
         {
-            //fileWriter = new FileWriter(path + nombreFichero,false); //False me machaca el fichero
+            fileWriter = new FileWriter(path + nombreFichero,false); //False me machaca el fichero
+            bufferedWriter = new BufferedWriter(fileWriter);
 
             System.out.println("Dime la 1ª Linea...");
             String linea = sc.nextLine();
@@ -39,6 +38,14 @@ public class Ejercicio1
 
         finally
         {
+            if (bufferedWriter != null) 
+            {
+                bufferedWriter.close();
+            }
+            if (fileWriter != null) 
+            {
+                fileWriter.close();
+            }
            
         }
 
