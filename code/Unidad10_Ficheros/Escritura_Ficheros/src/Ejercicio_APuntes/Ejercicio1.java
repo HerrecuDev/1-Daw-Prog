@@ -15,10 +15,11 @@ public class Ejercicio1
 
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
+        
 
         try  
         {
-            fileWriter = new FileWriter(path + nombreFichero,false); //False me machaca el fichero
+            
             bufferedWriter = new BufferedWriter(fileWriter);
 
             System.out.println("Dime la 1ª Linea...");

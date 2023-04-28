@@ -1,7 +1,13 @@
 {
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar"
-    ]
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "/home/pablo/Escritorio/1ºDaw Pablo Herrera/Programación/1-Daw-Prog/code/Unidad10_Ficheros/Proyecto_CreacionDe_LOGS/logutil.jar"
+        ],
+        "exclude": [
+            "lib/logutil.jar"
+        ]
+    }
 }
