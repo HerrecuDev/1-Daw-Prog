@@ -11,11 +11,11 @@ public class Municipio
 
     //Contructores :
 
-    public Municipio(int codigoPostal , String nombre  , int año , String poblacion)
+    public Municipio(int codigoPostal , String nombre  , String year , String poblacion)
     {
         this.codigoPostal = codigoPostal;
         this.nombre = nombre;
-        this.año = año;
+        this.año = year;
         this.poblacion = poblacion;
     }
 
