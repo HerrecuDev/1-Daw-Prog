@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import modelos.Alumno;
 import utiles.LecturaAlumnos;
@@ -20,6 +21,19 @@ public class App {
 
         // String[] lineaTroceada = lineaLeida.split();
         // String[] lineaTroceada = lineaLeida.trim();
+
+
+
+        //Collections :
+
+        Collections.sort(listaAlumnos);
+
+        //Collections.sort(listalumnos);
+
+        int posicionEncontrada =  Collections.binarySearch(listaAlumnos, new Alumno("", 31, 0, 0, 0, ""));
+
+        Alumno alumnoBuscado = listaAlumnos.get(posicionEncontrada);
+        System.out.println(alumnoBuscado);
 
 
         

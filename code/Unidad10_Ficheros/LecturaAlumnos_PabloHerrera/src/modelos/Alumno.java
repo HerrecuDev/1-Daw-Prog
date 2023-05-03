@@ -34,8 +34,21 @@ public String toString()
 //Metodos GETTERS :
 
 @Override
-public int compareTo(Alumno o) {
-   return this.edad - o.edad;
+public int compareTo(Alumno o) 
+{
+    if (this.edad == o.getEdad()) 
+    {
+        Double alturaThis = Double.valueOf(this.altura);
+        Double altura0 = Double.valueOf(o.getAltura());
+
+        return alturaThis.compareTo(altura0);
+    }
+
+    else
+    {
+         return (this.edad - o.edad);
+    }
+   
 }
 
 public String getSexo() {

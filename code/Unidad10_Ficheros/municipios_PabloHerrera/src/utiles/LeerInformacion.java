@@ -13,7 +13,7 @@ public class LeerInformacion
 {
     public Scanner sc = new Scanner(System.in);
 
-    public ArrayList<Municipio> leerFicheroMunicipio(Integer año) 
+    public ArrayList<Municipio> leerFicheroMunicipio(Integer year) 
     {
         ArrayList<Municipio> listaMunicipios = new ArrayList<>();
 
@@ -33,26 +33,37 @@ public class LeerInformacion
 
             String linea = bufferedReader.readLine();
 
-            while (año != null) 
+            while (year != null) 
             {
                 try
                 {
-                    String [] trozosLinea = linea.split(" ");
+                    // procesar los campos y Dividimos los Datos que tenemos en el fichero de los Municipios por el ";" :
+                    String [] trozosLinea = linea.split(";");
 
-        
-                    // procesar los campos
 
-                    String nombre = trozosLinea[1];
-                    String year = trozosLinea[3];
-                    String poblacion = trozosLinea[4];
-                  
-                    if (nombre != null) {
-                        
+                    //Ahora procesamos el primer Trozo[1] y lo dividimos en codigo postal y Nombre , Dividiendolo a traves del espacio :
+                    String [] dividirPrimerCampo = trozosLinea[0].split(" ");
+                    String pueblo = dividirPrimerCampo[1];
+
+                    if (dividirPrimerCampo.length > 2) 
+                    {
+                        for (int i = 2; i < dividirPrimerCampo.length; i++) 
+                        {
+                            pueblo += dividirPrimerCampo[i] + " ";
+                            
+                        }
                     }
+                    
+                    int codigo = Integer.valueOf(dividirPrimerCampo[0]);
+                    int año = Integer.valueOf(trozosLinea[2]);
+                    int poblacion = Integer.valueOf(trozosLinea[3]);
+
+                    
+                    
 
                     // crear los objetos Municipio
 
-                    Municipio municipio = new Municipio(0, nombre,year, poblacion);
+                    Municipio municipio = new Municipio(codigo, pueblo,año, poblacion);
 
 
                     // Insertarlos en la lista
