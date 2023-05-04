@@ -1,0 +1,20 @@
+[
+
+    {"marca":"Peugeot",
+    "modelo":"308",
+    "anioFabricacion":2010,
+    "precio":18000.0
+    },
+
+    {"marca":"Volkswagen",
+    "modelo":"Polo",
+    "anioFabricacion":2023,
+    "precio":23000.0
+    },
+
+    {"marca":"Mercedes",
+    "modelo":"Clase A",
+    "anioFabricacion":2015,
+    "precio":35000.0
+    }
+]
