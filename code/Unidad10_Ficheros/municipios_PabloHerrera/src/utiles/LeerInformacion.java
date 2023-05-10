@@ -9,15 +9,15 @@ import java.util.Scanner;
 
 import clases.Municipio;
 
-public class LeerInformacion
+public class LeerInformacion 
 {
     public Scanner sc = new Scanner(System.in);
 
-    public ArrayList<Municipio> leerFicheroMunicipio(Integer year) 
+    public static ArrayList<Municipio> leerFicheroMunicipio(Integer year) 
     {
         ArrayList<Municipio> listaMunicipios = new ArrayList<>();
 
-        String nombreFichero = "PoblacionMunicipiosMalaga.csv";
+        String nombreFichero = "/PoblacionMunicipiosMalaga.csv";
         String path = "src/recursos";
 
         FileReader fileReader = null;
@@ -30,61 +30,77 @@ public class LeerInformacion
 
             fileReader = new FileReader(path + nombreFichero);
             bufferedReader = new BufferedReader(fileReader);
+            String linea = "";
 
-            String linea = bufferedReader.readLine();
-
-            while (year != null) 
+            while ((linea = bufferedReader.readLine()) != null) 
             {
-                try
+
+                if (!linea.isEmpty()) 
                 {
-                    // procesar los campos y Dividimos los Datos que tenemos en el fichero de los Municipios por el ";" :
-                    String [] trozosLinea = linea.split(";");
-
-
-                    //Ahora procesamos el primer Trozo[1] y lo dividimos en codigo postal y Nombre , Dividiendolo a traves del espacio :
-                    String [] dividirPrimerCampo = trozosLinea[0].split(" ");
-                    String pueblo = dividirPrimerCampo[1];
-
-                    if (dividirPrimerCampo.length > 2) 
+                    
+                
+                    try
                     {
-                        for (int i = 2; i < dividirPrimerCampo.length; i++) 
+                        // procesar los campos y Dividimos los Datos que tenemos en el fichero de los Municipios por el ";" :
+                        String [] trozosLinea = linea.split(";");
+
+
+                        //Ahora procesamos el primer Trozo[1] y lo dividimos en codigo postal y Nombre , Dividiendolo a traves del espacio :
+                        String [] dividirPrimerCampo = trozosLinea[0].split(" ");
+                        String pueblo = dividirPrimerCampo[1];
+
+                        if (dividirPrimerCampo.length > 2) 
                         {
-                            pueblo += dividirPrimerCampo[i] + " ";
-                            
+                            for (int i = 2; i < dividirPrimerCampo.length; i++) 
+                            {
+                                pueblo += " " + dividirPrimerCampo[i];
+                            }
                         }
+                        
+                        int codigoPostal = Integer.valueOf(dividirPrimerCampo[0].trim());
+                        int año = Integer.valueOf(trozosLinea[2].trim());
+                        int poblacion = Integer.valueOf(trozosLinea[3].trim());
+                        String sexo = trozosLinea[1].trim();
+
+                        if (year != null) 
+                        {
+                            if (!trozosLinea[0].equals("29 Málaga") && año == year && sexo.equals("Total")) 
+                            {
+                                try 
+                                {
+                                // crear los objetos Municipio
+                                Municipio municipio = new Municipio(codigoPostal, pueblo,año, poblacion);
+
+                                // Insertarlos en la lista
+
+                                listaMunicipios.add(municipio);
+
+                                } catch (Exception e) {
+                                System.out.println("Error hay algun dato invalido " );
+                                }
+                            
+                            }
+                        }
+
+                        else
+                        {
+                            Municipio municipio = new Municipio(codigoPostal, pueblo, año, poblacion);
+                            listaMunicipios.add(municipio);
+
+
+
+                        }
+                        
                     }
-                    
-                    int codigo = Integer.valueOf(dividirPrimerCampo[0]);
-                    int año = Integer.valueOf(trozosLinea[2]);
-                    int poblacion = Integer.valueOf(trozosLinea[3]);
-
-                    
-                    
-
-                    // crear los objetos Municipio
-
-                    Municipio municipio = new Municipio(codigo, pueblo,año, poblacion);
-
-
-                    // Insertarlos en la lista
-
-                    listaMunicipios.add(municipio);
-
-
-
-
-
-
+                    catch(Exception ex)
+                    {
+                        System.out.println("ERROR : " + linea);
+                    }
+                
 
                 }
-                catch(Exception ex)
-                {
-                    System.out.println("ERROR : " + linea);
-                }
-            
-
-            } 
-        }
+            }
+        } 
         catch (FileNotFoundException e) 
         {
             // TODO Auto-generated catch block
@@ -98,7 +114,9 @@ public class LeerInformacion
         }
 
         return listaMunicipios;
+    
     }
+}
 
     
-}
+
