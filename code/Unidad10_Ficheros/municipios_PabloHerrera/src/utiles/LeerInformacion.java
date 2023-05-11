@@ -59,12 +59,14 @@ public class LeerInformacion
                         
                         int codigoPostal = Integer.valueOf(dividirPrimerCampo[0].trim());
                         int año = Integer.valueOf(trozosLinea[2].trim());
-                        int poblacion = Integer.valueOf(trozosLinea[3].trim());
+                        int poblacion = Integer.valueOf(trozosLinea[3].trim().replace(".", ""));
+                        
+                
                         String sexo = trozosLinea[1].trim();
 
                         if (year != null) 
                         {
-                            if (!trozosLinea[0].equals("29 Málaga") && año == year && sexo.equals("Total")) 
+                            if (!trozosLinea[0].equals("29 Málaga") && año == year && sexo.equals("Total"))
                             {
                                 try 
                                 {
@@ -87,14 +89,13 @@ public class LeerInformacion
                             Municipio municipio = new Municipio(codigoPostal, pueblo, año, poblacion);
                             listaMunicipios.add(municipio);
 
-
-
                         }
                         
                     }
                     catch(Exception ex)
                     {
-                        System.out.println("ERROR : " + linea);
+                        //System.out.println("ERROR " + linea + " " + "EL fichero no tiene los datos de la poblacion");
+                        bufferedReader.readLine();
                     }
                 
 
@@ -104,17 +105,50 @@ public class LeerInformacion
         catch (FileNotFoundException e) 
         {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+           System.out.println(e.getMessage());
         }
 
         catch(IOException ioException)
         {
              // TODO Auto-generated catch block
-             ioException.printStackTrace();
+            System.out.println(ioException.getMessage());
         }
 
         return listaMunicipios;
     
+    }
+
+
+
+
+
+
+    public static Municipio BuscarMunicipio( ArrayList<Municipio> coleccionMunicipios,String nombre , Integer año)
+    {
+        
+        Municipio municipio = null;
+        
+
+        try 
+        {
+            
+
+            for (Municipio pueblo : coleccionMunicipios) 
+            {
+                if (pueblo.getNombre().equals(nombre) && pueblo.getAño() == año) 
+                {
+                    municipio = pueblo;
+                }
+                
+            }
+            
+    
+            
+        } catch (Exception e) 
+        {
+            System.out.println("Error : Municipio no encontrado"  );
+        }
+        return municipio;
     }
 }
 

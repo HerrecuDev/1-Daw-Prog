@@ -38,4 +38,74 @@ public class Municipio
     {
         return this.nombre + " ( " + this.año +" ) " + " : " + this.poblacion;
     }
+
+
+
+    //Generamos los GETTErs y SETTERS
+
+    public int getCodigoPostal() {
+        return codigoPostal;
+    }
+
+
+
+
+
+    public void setCodigoPostal(int codigoPostal) {
+        this.codigoPostal = codigoPostal;
+    }
+
+
+
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+
+
+
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+
+
+
+    public int getAño() {
+        return año;
+    }
+
+
+
+
+
+    public void setAño(int año) {
+        this.año = año;
+    }
+
+
+
+
+
+    public int getPoblacion() {
+        return poblacion;
+    }
+
+
+
+
+
+    public void setPoblacion(int poblacion) {
+        this.poblacion = poblacion;
+    }
+
+
+
+
+
+    
 }

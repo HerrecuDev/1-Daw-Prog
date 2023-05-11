@@ -13,7 +13,9 @@ public class App
 
         municipios = new ArrayList<Municipio>();
 
-        municipios = LeerInformacion.leerFicheroMunicipio(2015);
+        
+        //Debemos de poner el año a NULL para poder realizar bien la busqueda del Municipio
+        municipios = LeerInformacion.leerFicheroMunicipio(null);
 
         //implementamos leer fichero municipio en un ArrayList de municipios.
         //Y decimos que x cada municipio que hay dentro de la lista municipio lo introduzca en el nuevo Arraylist municipios
@@ -21,6 +23,15 @@ public class App
         {
             System.out.println(municipio);
         }
+
+
+
+
+        //Realizamos la Busqueda de los Municipios segun el parametro y el año que le pasamos :
+
+        Municipio municipioBuscado = LeerInformacion.BuscarMunicipio(municipios, "Yunquera",2022);
+
+        System.out.println( "El municipio es : " + municipioBuscado);
 
         
 
