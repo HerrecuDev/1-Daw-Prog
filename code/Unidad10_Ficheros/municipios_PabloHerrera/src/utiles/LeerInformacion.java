@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 import clases.Municipio;
@@ -150,6 +151,16 @@ public class LeerInformacion
         }
         return municipio;
     }
+
+
+
+
+    public static void IncrementoPoblacion(ArrayList<Municipio> coleccionMunicipios, int year1, int year2) 
+    {
+        HashMap<String, Integer> diccionarioMunicipio;
+
+        
+    } 
 }
 
     

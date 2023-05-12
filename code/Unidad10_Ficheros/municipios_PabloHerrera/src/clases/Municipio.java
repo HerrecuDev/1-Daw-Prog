@@ -5,13 +5,13 @@ public class Municipio
     //Atributos :
     private int codigoPostal;
     private String nombre;
-    private int año;
+    private Integer año;
     private int poblacion;
 
 
     //Contructores :
 
-    public Municipio(int codigoPostal , String nombre  , int year , int poblacion)
+    public Municipio(int codigoPostal , String nombre  , Integer year , int poblacion)
     {
         this.codigoPostal = codigoPostal;
         this.nombre = nombre;
@@ -72,23 +72,7 @@ public class Municipio
     }
 
 
-
-
-
-    public int getAño() {
-        return año;
-    }
-
-
-
-
-
-    public void setAño(int año) {
-        this.año = año;
-    }
-
-
-
+    
 
 
     public int getPoblacion() {
@@ -101,6 +85,22 @@ public class Municipio
 
     public void setPoblacion(int poblacion) {
         this.poblacion = poblacion;
+    }
+
+
+
+
+
+    public Integer getAño() {
+        return año;
+    }
+
+
+
+
+
+    public void setAño(Integer año) {
+        this.año = año;
     }
 
 
