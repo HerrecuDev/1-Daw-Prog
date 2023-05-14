@@ -124,23 +124,23 @@ public class LeerInformacion
 
 
 
-    public static Municipio BuscarMunicipio( ArrayList<Municipio> coleccionMunicipios,String nombre , Integer año)
+    public static Municipio BuscarMunicipio( ArrayList<Municipio> coleccionMunicipios,String nombre , int año)
     {
+        
         
         Municipio municipio = null;
         
-
         try 
         {
-            
-
+           
+           
             for (Municipio pueblo : coleccionMunicipios) 
             {
                 if (pueblo.getNombre().equals(nombre) && pueblo.getAño() == año) 
                 {
                     municipio = pueblo;
                 }
-                
+               
             }
             
     
@@ -149,15 +149,41 @@ public class LeerInformacion
         {
             System.out.println("Error : Municipio no encontrado"  );
         }
+        
         return municipio;
+       
     }
 
 
 
 
-    public static void IncrementoPoblacion(ArrayList<Municipio> coleccionMunicipios, int year1, int year2) 
+    public static HashMap<String, Integer> IncrementoPoblacion(ArrayList<Municipio> coleccionMunicipios, int year1, int year2) 
     {
-        HashMap<String, Integer> diccionarioMunicipio;
+        HashMap<String, Integer> diccionarioMunicipios = new HashMap<>();
+        int incrementoPoblacion = 0;
+        Municipio año1 = null;
+        Municipio año2 = null;
+    
+        //Usando la funcion Busqueda municipios calculamos la diferencia entre ambos Municipios
+        //Y se loañadimos a nuestro hashmap los datos necesarios
+    
+        try 
+        {
+            for (Municipio pueblo : coleccionMunicipios) 
+            {
+                año1 = BuscarMunicipio(coleccionMunicipios, pueblo.getNombre(), year1);
+                año2 = BuscarMunicipio(coleccionMunicipios, pueblo.getNombre(), year2);
+                incrementoPoblacion = año2.getPoblacion() - año1.getPoblacion();
+                diccionarioMunicipios.put(pueblo.getNombre(), incrementoPoblacion);
+                
+            }
+            
+            
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        return diccionarioMunicipios;
 
         
     } 
