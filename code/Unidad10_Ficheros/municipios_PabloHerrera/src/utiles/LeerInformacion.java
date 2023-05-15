@@ -13,7 +13,7 @@ import clases.Municipio;
 public class LeerInformacion 
 {
     public Scanner sc = new Scanner(System.in);
-
+    
     public static ArrayList<Municipio> leerFicheroMunicipio(Integer year) 
     {
         ArrayList<Municipio> listaMunicipios = new ArrayList<>();
@@ -60,7 +60,7 @@ public class LeerInformacion
                         
                         int codigoPostal = Integer.valueOf(dividirPrimerCampo[0].trim());
                         int año = Integer.valueOf(trozosLinea[2].trim());
-                        int poblacion = Integer.valueOf(trozosLinea[3].trim().replace(".", ""));
+                        int poblacion = Integer.valueOf(trozosLinea[3].replace(".", "").trim());
                         
                 
                         String sexo = trozosLinea[1].trim();
@@ -87,9 +87,12 @@ public class LeerInformacion
 
                         else
                         {
-                            Municipio municipio = new Municipio(codigoPostal, pueblo, año, poblacion);
-                            listaMunicipios.add(municipio);
-
+                            if (sexo.equals("Total")) 
+                            {
+                                Municipio municipio = new Municipio(codigoPostal, pueblo, año, poblacion);
+                                listaMunicipios.add(municipio);
+                            }
+                            
                         }
                         
                     }
@@ -124,23 +127,30 @@ public class LeerInformacion
 
 
 
-    public static Municipio BuscarMunicipio( ArrayList<Municipio> coleccionMunicipios,String nombre , Integer año)
+     /**
+      * Buscamos el Municipio que coincida con el nombre y año Introducido en el main para que nos de el numero de habitantes que tiene en dicho año.
+      * @param coleccionMunicipios
+      * @param nombre
+      * @param año
+      * @return
+      */
+    public static Municipio BuscarMunicipio( ArrayList<Municipio> coleccionMunicipios,String nombre , int año)
     {
+        
         
         Municipio municipio = null;
         
-
         try 
         {
-            
-
+           
+           
             for (Municipio pueblo : coleccionMunicipios) 
             {
                 if (pueblo.getNombre().equals(nombre) && pueblo.getAño() == año) 
                 {
                     municipio = pueblo;
                 }
-                
+               
             }
             
     
@@ -149,18 +159,92 @@ public class LeerInformacion
         {
             System.out.println("Error : Municipio no encontrado"  );
         }
+        
         return municipio;
+       
     }
 
 
 
+    /**
+     * Mediante el ArrayList anterior creamos un Hashmap para añadir en el nombre(idMunicipio y la diferencia entre la poblacion de un año a otro)
+     * @param coleccionMunicipios
+     * @param year1
+     * @param year2
+     * @return
+     */
 
-    public static void IncrementoPoblacion(ArrayList<Municipio> coleccionMunicipios, int year1, int year2) 
+    public static HashMap<String, Integer> IncrementoPoblacion(ArrayList<Municipio> coleccionMunicipios, int year1, int year2) 
     {
-        HashMap<String, Integer> diccionarioMunicipio;
+        HashMap<String, Integer> diccionarioMunicipios = new HashMap<>();
+        int incrementoPoblacion = 0;
+        Municipio año1 = null;
+        Municipio año2 = null;
+
+       
+    
+        //Usando la funcion Busqueda municipios calculamos la diferencia entre ambos Municipios
+        //Y se loañadimos a nuestro hashmap los datos necesarios
+    
+        Municipio mun = null;
+        try 
+        {
+            for (Municipio pueblo : coleccionMunicipios) 
+            {
+                mun = pueblo;
+                año1 = BuscarMunicipio(coleccionMunicipios, pueblo.getNombre(), year1);
+                año2 = BuscarMunicipio(coleccionMunicipios, pueblo.getNombre(), year2);
+                incrementoPoblacion = año2.getPoblacion() - año1.getPoblacion();
+                diccionarioMunicipios.put(pueblo.getNombre(), incrementoPoblacion);
+                
+            }
+            
+            
+        } catch (Exception e) {
+            System.out.println("Error al hacer el incremento de la Poblacion " + e.getMessage() + mun);
+        }
+
+        return diccionarioMunicipios;
 
         
     } 
+
+    /**
+     * Mostramos la diferencia de la poblacion entre los dos años introducidos por el main
+     * @param diccionario
+     * @param municipio
+     * @param year1
+     * @param year2
+     * @return
+     */
+
+    public static String mostrarIncremento(HashMap<String, Integer> diccionario,String municipio , int year1 , int year2)
+    {
+
+        String mensaje = "";
+        String resultado = "";
+
+        for (String  pueblo : diccionario.keySet()) 
+        {
+            if (pueblo.equals(municipio)) 
+            {
+                if (diccionario.get(pueblo) < 0) 
+                {
+                    mensaje = diccionario.get(pueblo) + " DECREMENTO";
+                }
+                else 
+                {
+                    mensaje = diccionario.get(pueblo) + " INCREMENTO ";
+                }
+
+                resultado = "El municipio " + pueblo + " : " + mensaje;
+            }
+
+            
+        }
+            return resultado;
+
+    }
 }
 
     
