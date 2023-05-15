@@ -87,9 +87,12 @@ public class LeerInformacion
 
                         else
                         {
-                            Municipio municipio = new Municipio(codigoPostal, pueblo, año, poblacion);
-                            listaMunicipios.add(municipio);
-
+                            if (sexo.equals("Total")) 
+                            {
+                                Municipio municipio = new Municipio(codigoPostal, pueblo, año, poblacion);
+                                listaMunicipios.add(municipio);
+                            }
+                            
                         }
                         
                     }
@@ -183,11 +186,12 @@ public class LeerInformacion
         //Usando la funcion Busqueda municipios calculamos la diferencia entre ambos Municipios
         //Y se loañadimos a nuestro hashmap los datos necesarios
     
+        Municipio mun = null;
         try 
         {
             for (Municipio pueblo : coleccionMunicipios) 
             {
-               
+                mun = pueblo;
                 año1 = BuscarMunicipio(coleccionMunicipios, pueblo.getNombre(), year1);
                 año2 = BuscarMunicipio(coleccionMunicipios, pueblo.getNombre(), year2);
                 incrementoPoblacion = año2.getPoblacion() - año1.getPoblacion();
@@ -197,7 +201,7 @@ public class LeerInformacion
             
             
         } catch (Exception e) {
-            System.out.println("Error " + e.getMessage());
+            System.out.println("Error al hacer el incremento de la Poblacion " + e.getMessage() + mun);
         }
 
         return diccionarioMunicipios;

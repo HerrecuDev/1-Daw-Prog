@@ -30,7 +30,7 @@ public class App
 
         //Realizamos la Busqueda de los Municipios segun el parametro y el año que le pasamos :
 
-        Municipio municipioBuscado = LeerInformacion.BuscarMunicipio(municipios, "Viñuela",2020);
+        Municipio municipioBuscado = LeerInformacion.BuscarMunicipio(municipios, "Yunquera",2020);
 
         System.out.println( "El municipio es : " + municipioBuscado);
 
