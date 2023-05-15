@@ -37,16 +37,40 @@ public class App
 
         System.out.println("=====================================================================================");
 
-        //Calculamos el incremento de Poblacion en un Municpio:
 
-         HashMap<String ,Integer> diccionarioMunicipios = new HashMap<>();
 
-         diccionarioMunicipios = LeerInformacion.IncrementoPoblacion(municipios, 2021, 2020);
-         
-        
 
-        System.out.println("La poblacion a incrementado " + diccionarioMunicipios);
-        
+       
+
+
+        //Imprimimos los Municipios por orden ascendestes de año y nombre :
+
+
+
+        //Informacion de Mijas en 2022 :
+
+        Municipio mijas = LeerInformacion.BuscarMunicipio(municipios, "Mijas", 2022);
+        System.out.println( " EL municipio : " + mijas + "  habitantes");
+
+
+        //Años para el Incremento :
+
+        int year1 = 2016;
+        int year2 = 2022;
+        //Incremento Fuengirola del año 2016 al 2022 :
+
+        HashMap<String ,Integer> diccionarioMunicipios = LeerInformacion.IncrementoPoblacion(municipios,year1,year2);
+
+        String mensaje = LeerInformacion.mostrarIncremento(diccionarioMunicipios, "Fuengirola",year1, year2);
+        System.out.println(mensaje);
+
+        //Incremento Mijas del año 2016 al 2022 :
+
+        mensaje = LeerInformacion.mostrarIncremento(diccionarioMunicipios, "Mijas",year1, year2);
+        System.out.println(mensaje);
+
+        //Municipio menos Poblado :
+
 
          
         
